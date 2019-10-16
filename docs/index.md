@@ -1,6 +1,6 @@
 # Learn Packer
 
-Author: James Woolfendnen
+Author: James Woolfenden
 
 ------------
 

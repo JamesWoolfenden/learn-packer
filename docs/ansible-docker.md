@@ -32,3 +32,30 @@ $ ansible-galaxy install --roles-path . migibert.terraform
 ```
 
 You now have a folder **migibert.terraform**.
+
+You can build these up into playbooks and provsioners, I made many of these to make some Confluent/Kafka Images here:
+<https://github.com/JamesWoolfenden/packer-by-example/blob/master/packfiles/redhat/confluent-connect.json>
+
+```json
+"provisioners": [
+        {
+            "type": "ansible-local",
+            "playbook_file": "provisioners/ansible/playbooks/confluent.yml",
+            "role_paths": [
+                "provisioners/ansible/roles/openjdk",
+                "provisioners/ansible/roles/confluent.common"
+            ]
+        },
+```
+
+where **confluent.yml** is:
+
+```json
+---
+- hosts: localhost
+  become: yes
+  become_user: root
+  roles:
+    - openjdk
+    - confluent.common
+```
