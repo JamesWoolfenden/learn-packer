@@ -22,7 +22,8 @@ and to the EBS builder we add:
 
 ## Assumed roles
 
-A common AWS IAM pattern is to create roles that can be assumed by users, either in the same AWS account or as "cross account roles".
+A common AWS IAM usage pattern is to create roles that can be assumed by users, either in the same AWS account or as "cross account roles".
+
 Assuming roles isn't yet supported directly in Packers EBS builder syntax, so for now there are two well established external methods for using assumed roles:
 
 ### Via scripts
@@ -99,12 +100,14 @@ Then when you run Packer it can use the credentials of the assumed role.
 
 AWS Vault is very handy tool for managing authentication to multiple accounts and roles.
 
-It comes from 99designs and can found here <https://github.com/99designs/aws-vault>. The tool generates the same environmental variables as the scripts and also encrypts and password controls your access. This is great for local development. I've used this solution on a number of projects.
+It comes from **99designs**[Thanks Folks] and can found here <https://github.com/99designs/aws-vault>. The tool generates the same environmental variables as the scripts and also encrypts and password controls your access. This is great for local development. I've used this solution on a number of projects.
 
 ### Federated Authentication
 
-If your AWS account is setup to use a federated Authentication scheme (Active Directory), your account may have no IAM users. Having no users specified makes it difficult to create access keys, and by difficult I really mean impossible. Do not then bypass your mandated security procedure and add some IAM users in.
+If your AWS account is set-up to use a federated Authentication scheme (Active Directory), your account may have no IAM users. Having no users specified makes it difficult to create access keys, and by difficult I really mean impossible. Do not then bypass your mandated security procedure and add some IAM users in.
+
 How can I work?
+
 The command line tool  **saml2aws** <https://github.com/Versent/saml2aws> solves exactly this problem, it allows you to set up multiple profiles and then login to those profiles.
 It then updates your .aws configuration with temporary AWS credentials. You can then continue as before but either set the default profile or use named profiles.
 

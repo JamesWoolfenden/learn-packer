@@ -236,7 +236,7 @@ pip install awscli
 
 ## Provisioners
 
-So this next example finally combines the lot, it's imaginatively called **packer-docker-aws-ecr-shell.json
+This next example combines the lot, it's imaginatively called **packer-docker-aws-ecr-shell.json
 
 ```json
 {
@@ -427,7 +427,7 @@ Build 'docker' finished.
 --> docker: Imported Docker image: 123456789012.dkr.ecr.eu-west-1.amazonaws.com/aws-codebuild-container:5
 ```
 
-So that's an example of nearly every key component to build your docker file. All that's required is a tool to host it in.
+So that's an example of nearly every key component to build your Dockerfile. All that's required is a tool to host it in.
 
 ### The Cons
 

@@ -1,8 +1,8 @@
 # Installing Packer
 
-Packer is a system for creating multiple image types from a single file.
+Packer is a system for creating images and multiple image types from a single file.
 Manual Installation instructions are well documented on the Packer website.
-Packer like Terraform, it is frequently updated with new features, as well
+Packer like Terraform, is frequently updated with new features, as well
 as fixes, which are well documented in its changelog
 <https://github.com/hashicorp/packer/blob/master/CHANGELOG.md>.
 
@@ -90,8 +90,7 @@ sudo sh setup-packer.sh
 
 ### Docker container
 
-You can also you Packer from a container
-custom shell script check your hash
+You can also you use Packer from a container
 
 ```docker
 docker pull hashicorp/packer
@@ -114,7 +113,7 @@ Or
 docker run -i -t hashicorp/packer:light validate
 ```
 
-You will need to pass in the packer files by sharing host folder into Packers Container.
+You will need to pass in the Packer files by sharing the host folder into Packers Container.
 
 ```docker
 docker run -v
@@ -165,4 +164,6 @@ $ packer -version
 
 ### Debugging
 
-You can run Packer in Debug mode using the **-debug** flag, it's fairly verbose but it is particularly useful to see which AWS call fails and to get the temporary SSH key thats used to connect to the box used to make your AMI?
+You can run Packer in Debug mode using the **-debug** flag, it's fairly verbose but it is particularly useful to need to see which AWS call fails and to get the temporary SSH key that's used to connect to the box used to make your AMI?
+
+It'll happen.
