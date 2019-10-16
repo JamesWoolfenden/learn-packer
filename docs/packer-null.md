@@ -1,6 +1,6 @@
 # Null builders
 
-This builder does Null or actually nothing. What's the use in that? Well sometimes you want to test some other part a provisioner or post-processor and not wait 10 minutes for a build to run.
+This builder does Null or actually nothing. What's the use in that? Well sometimes you'll want to test some other part of a provisioner or post-processor and not wait 10 minutes for a build to run.
 It also does cost anything to run.
 
 **packer-null.json** is the minimal configuration possible.
@@ -27,7 +27,7 @@ Build 'null' finished.
 --> null: Did not export anything. This is the null builder
 ```
 
-Hopefully i set your expectations low, so no suprises.
+Hopefully I set your expectations low, so no suprises.
 A null communicator is not that helpful, but you can set a few other parameters.
 You can set the builder to talk to an existing instance:
 
@@ -64,7 +64,8 @@ Try making and running **packer-null-file.json**
     ]
 }
 
-Should gives you:
+This should give you:
+
 ```shell
 null output will be in this color.
 

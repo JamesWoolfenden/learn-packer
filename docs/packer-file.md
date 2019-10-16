@@ -1,6 +1,6 @@
 # File Header
 
-Files. Well apart from debugging this ones lost on me.
+Files. Well apart from debugging this one's lost on me.
 
 So for completeness here's as example using the file builder in the file **packer-file.json**:
 
@@ -15,6 +15,8 @@ So for completeness here's as example using the file builder in the file **packe
     ]
 }
 ```
+
+Can't say I learned.
 
 ```bash
 packer build .\packer-file.json

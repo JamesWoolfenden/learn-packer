@@ -1,7 +1,7 @@
 # Packer-Ansible-Docker
 
 As of writing there’s still no support for running Ansible on Windows [except via WSL], so to
-run these examples you will have to have A Mac Or Linux.
+run these examples you will have to have a Mac Or Linux.
 
 ## Pre-requisite
 
@@ -14,14 +14,14 @@ sudo apt-add-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible
 ```
 
-For other platform see the Ansible site itself <https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html>
+For other platforms refere to or see the Ansible site itself <https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html>
 
 Ansible **Galaxy** is pre-packaged with Ansible.
 
-## Get an Ansible role
+## How to get an Ansible role
 
-Call Ansible Galaxy to download a role, in this case a role to install
-terraform:
+Call Ansible Galaxy to download a role, in this case, a role to install
+Terraform:
 
 ```shell
 $ ansible-galaxy install --roles-path . migibert.terraform

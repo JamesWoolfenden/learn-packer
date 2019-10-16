@@ -136,7 +136,7 @@ find a significant number of the samples on the internet do not work.
 
 ### Pre-seed file
 
-In the boot_command was a reference:
+In the **boot_command** was a reference:
 
 ```json
 "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
@@ -194,7 +194,7 @@ ubiquity ubiquity/summary note
 ubiquity ubiquity/reboot boolean true
 ```
 
-and this to your packer boot_command
+and this to your packer **boot_command**
 
 ```json
 " automatic-ubiquity<wait>",
@@ -205,9 +205,11 @@ and this to your packer boot_command
 
 This was easier to fix, add this line to packer virtualbox
 
+```json
 "ssh_pty": "true",
+```
 
-Also adding a script provisioner
+Also adding a script Provisioner
 
 ```json
 {

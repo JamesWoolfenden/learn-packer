@@ -1,6 +1,6 @@
 # Post-processor
 
-If can add a post-processor section to your packer templates. In this case add a Vagrant to an Ubuntu AMI build
+You can add a post-processor section to your Packer templates. In this case add a Vagrant to an Ubuntu AMI build
 
 ```json
 "post-processors": ["vagrant"]
@@ -120,7 +120,7 @@ eu-west-1: ami-09e36b5de41d52201
 --> amazon-ebs: 'aws' provider box: packer_amazon-ebs_aws.box
 ```
 
-You get your regular ami made plus you notice that the last few lines are different from usual build and outputs and leaves you with a binary file
+You get your regular AMI made plus you'll notice that the last few lines are different, instead of the usual build and output it leaves you you with a binary file
 **packer_amazon-ebs_aws.box**.
 
 This can be added to your Vagrant with:
