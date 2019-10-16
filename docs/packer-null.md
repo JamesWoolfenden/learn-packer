@@ -124,7 +124,7 @@ So as you can see the NULL provisioner is a useful development and testing tool 
 
 ### File builder
 
-Another odd one for the development pile, allowa you to test post-processors quickly.
+Another odd one for the development pile, allows you to test post-processors quickly.
 
 ```json
 {
