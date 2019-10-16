@@ -60,7 +60,7 @@ Update your packer template, it should now look like this
 }
 ```
 
-Time for try it out.
+Time to try it out.
 
 ```cli
 packer build virtualbox-ubuntu.json
@@ -85,20 +85,21 @@ loads the ISO. virtualbox-iso output will be in this color.
 ==> virtualbox-iso: Waiting for SSH to become available...
 ```
 
-Yes I ran it from Windows 10 PC. A smart move would be to save these ISO
-locally, and use them from there.
+Yes I ran it from a Windows 10 PC.
+A smart move would be to save these ISO locally, and use them from there.
 
 So the output has halted but you should see that Virtual box is running, should
 look a bit like this:
 
 It would be unfair at this point if I didnt indicate that the process was yet
 fully automated, running packer now would boot your VM but leave it waiting for
-you to answer and supply values to the installer. What's the point of that, no
+you to answer and supply values to the installer. What's the point of that, not
 much DevOps there?
 
-The crucial missing part of the puzzle, is the boot_command and the preseed
-file. These are the instructions provided to the VM that answer or configured
-the machine image, well for this builder and OS:
+The crucial missing part of the puzzle, is the **boot_command** and the **preseed**
+file.
+These are the instructions provided to the VM that answer or configure
+the machine image, well for this builder and OS it's:
 
 ```json
          "boot_command": [
@@ -131,7 +132,7 @@ the machine image, well for this builder and OS:
 The Boot command is composed of a number of different pieces, here it is:
 <https://www.packer.io/docs/builders/virtualbox-iso.html>
 
-It may take some significant effort to get the boot_command correct, you may
+It may take some significant effort to get the **boot_command** correct, you may
 find a significant number of the samples on the internet do not work.
 
 ### Pre-seed file
