@@ -218,12 +218,13 @@ Build 'docker' finished.
 --> docker: Imported Docker image: 123456789012.dkr.ecr.eu-west-1.amazonaws.com/aws-codebuild-container:5
 ```
 
-While thats great, we added nothing to the container so it doesn't prove that much yet, sure it connects to ECR and pushes the container, but we added nothing to it, for that we need to add some provisioners.
+While that's great, we added nothing to the container so it doesn't prove that much yet.
+Sure it connected to ECR and pushed the container, but we added nothing to it, for that, we need to add some Provisioners.
 
-Packer builds containers only work with Docker images that already have SSH on them. Reading this will save you a lot of time.
+Packer builds containers will only work with Docker images that already have SSH on them. Reading this will save you a lot of time.
 I've changed the base image from **hashicorp/terraform** to **ebiwd/alpine-ssh**, and added terraform to its package list.
 
-This the shell script it runs on the provisioner **install_awscli.sh**.
+This the shell script it runs on the Provisioner **install_awscli.sh**.
 
 ```bash
 #!/bin/sh
@@ -236,7 +237,7 @@ pip install awscli
 
 ## Provisioners
 
-This next example combines the lot, it's imaginatively called **packer-docker-aws-ecr-shell.json
+This next example combines the lot, it's imaginatively called **packer-docker-aws-ecr-shell.json**
 
 ```json
 {

@@ -1,8 +1,8 @@
 # Building Amazon Machine Images (AMIs) with Packer
 
-The is most likely why you are interested in Packer, you can use Packer to help
-make your AMI'S or what used to be called "Golden Images". The examples in this
-chapter target the customization of existing AWS AMI's, usually from AWS or from
+This is most likely why you are interested in Packer, you can use Packer to help
+make your AMI'S, or what used to be called "Golden Images".
+The examples in this chapter target the customization of existing AWS AMI's, usually from AWS or from
 trusted sources such as from Canonical (Makers of Ubuntu) which are provided to
 your from their AWS account.
 
@@ -62,7 +62,7 @@ A simple and short test of AWS connectivity is do a list of S3 buckets:
 aws s3 ls
 ```
 
-It should return a list of s3 buckets, if you have made any yet that is.
+It should return a list of S3 buckets, if you have made any yet that is.
 
 ### Using the credentials
 
