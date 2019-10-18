@@ -1,0 +1,2 @@
+echo 'port 2222' >> /etc/ssh/sshd_config
+service sshd restart

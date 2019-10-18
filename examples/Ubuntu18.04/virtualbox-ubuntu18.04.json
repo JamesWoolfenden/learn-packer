@@ -1,0 +1,69 @@
+{
+    "variables": {
+        "hostname": "ubuntu",
+        "domain": "local",
+        "switch_name":"External Switch",
+        "ssh_user": "packer",
+        "ssh_pass": "p@ck3r"
+    },
+    "builders": [
+        {
+            "type": "virtualbox-iso",
+            "guest_os_type": "Ubuntu_64",
+            "vm_name": "ubuntu-18.04-vbox-template",
+            "iso_url": "http://cdimage.ubuntu.com/releases/18.04/release/ubuntu-18.04.2-server-amd64.iso",
+            "iso_checksum": "34416ff83179728d54583bf3f18d42d2",
+            "iso_checksum_type": "md5",
+            "memory": "1024",
+            "cpus": "1",
+            "disk_size": "20000",
+            "format": "ova",
+            "guest_additions_mode": "upload",
+            "headless": "false",
+            "http_directory": "http",
+            "switch_name":"{{user `switch_name`}}",
+            "ssh_pty": "true",
+            "ssh_username": "{{user `ssh_user`}}",
+            "ssh_password": "{{user `ssh_pass`}}",
+            "ssh_wait_timeout": "20m",
+            "shutdown_command": "sudo /sbin/halt -p",
+            "boot_command": [
+                "<enter><wait><f6><esc><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+                "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+                "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+                "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+                "/install/vmlinuz<wait>",
+                " auto<wait>",
+                " automatic-ubiquity<wait>",
+                " console-setup/ask_detect=false<wait>",
+                " console-setup/layoutcode=us<wait>",
+                " console-setup/modelcode=pc105<wait>",
+                " debconf/frontend=noninteractive<wait>",
+                " ubiquity/reboot=true<wait>",
+                " debian-installer=en_US<wait>",
+                " fb=false<wait>",
+                " initrd=/install/initrd.gz<wait>",
+                " kbd-chooser/method=us<wait>",
+                " keyboard-configuration/layout=USA<wait>",
+                " keyboard-configuration/variant=USA<wait>",
+                " locale=en_US<wait>",
+                " netcfg/get_domain={{user `domain`}}<wait>",
+                " netcfg/get_hostname={{user `hostname`}}<wait>",
+                " grub-installer/bootdev=/dev/sda<wait>",
+                " noapic<wait>",
+                " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg",
+                " -- <wait>",
+                "<enter><wait><enter>"
+            ]
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "execute_command": "echo '{{user `ssh_pass`}}' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
+            "inline": [
+                "echo '%sudo    ALL=(ALL)  NOPASSWD:ALL' >> /etc/sudoers"
+            ]
+        }
+    ]
+}

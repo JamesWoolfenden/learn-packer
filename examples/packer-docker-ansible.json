@@ -1,0 +1,18 @@
+{
+    "_comment": "bashing ",
+    "variables": {
+    },
+    "builders": [
+        {
+            "type": "docker",
+            "image": "ubuntu",
+            "commit": true
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "ansible",
+            "playbook_file": "./playbook.yml"
+        }
+    ]
+}
