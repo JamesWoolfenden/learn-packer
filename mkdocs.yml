@@ -41,3 +41,15 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+
+# Customization
+extra:
+  manifest: 'manifest.webmanifest'
+  social:
+    - type: 'twitter'
+      link: 'https://twitter.com/slalom'
+    - type: 'linkedin'
+      link: 'https://linkedin.com/company/slalom-consulting/'
+
+# Copyright
+copyright: 'Copyright &copy; 2019 - 2019 Slalom, LLC'
