@@ -12,6 +12,8 @@ Hashicorp Packer is fully open source and the sourcecode is on Github here
 Golang. As well as examining the code you can see current issues/defects
 <https://github.com/hashicorp/packer/issues> and submit your own.
 
+All the examples can be found and copied from <https://github.com/JamesWoolfenden/learn-packer-web/tree/master/examples>
+
 Packer uses the term "templates" to refer to the files passed to the tool, are
 JSON files. **base-ami.json** below is a fully fledged AMI creastion example for AWS.
 
