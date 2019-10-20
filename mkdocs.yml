@@ -18,6 +18,9 @@ theme:
   name: material
   favicon: 'assets/images/favicon.png'
 
+repo_name: 'jamesWoolfenden/learn-packer-web'
+repo_url: 'https://github.com/jamesWoolfenden/learn-packer-web'
+
 markdown_extensions:
   - admonition
   - codehilite
