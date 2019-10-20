@@ -1,22 +1,29 @@
 # Versioning
 
-With a CI tool in place, we have described a Scenario where AMI's are built routinely. This creates its own set of problems.
-Greatest of which are "How do i know which AMI is the best?" and "Which ones been tried and tested?"
-In fact I want to treat the AMIs themselves as a software Artifact. Could I get some versioning with the AMIs?
-When we build a Java library we version it, we can do the same if we name or tag it with a Build number. But I already have a git hash? The git hash does identify it, but it doesn't work well with Humans, QA or ordering. Thanks Git.
+For anything more than the basics you should have a "Bakery" a CI tool and process in place that regaular builds new iMages.
+A Scenario where AMI's are built routinely.
 
-## Numbering
+This creates its own set of problems.
 
-Most CI tools provide/expose and environmental variable or BUILD_NUMBER.
-We can use that variable in the process.
+Greatest of which are "How do I know which AMI is the best?", "How do build a new Imagine and Not Break something" and "Which of these Images has been tried and tested?"
 
-Add a variable to pull the environment variable BUILD_NUMBER into Packer.
+The Images/AMIs themselves are a software Artifact and should have a development process like they do.
+
+When we build a Java library and version it, we can do the same if we name or tag it with a Build number. But I already have a git hash? The git hash does identify it, but it doesn't work well with Humans, QA or ordering. Thanks Git.
+
+## A basic numbering Scheme
+
+[You could use semantic versioning or any scheme you like]
+
+Most CI tools provide/expose and environmental variable or BUILD_NUMBER that can be used.
+
+Add a variable to your template, this will to pull the environment variable BUILD_NUMBER into Packer.
 
 ```json
   "build_number": "{{env `BUILD_NUMBER`}}",
 ```
 
-Then modify the ami name:
+Then modify the AMI name to refelct the new scheme:
 
 ```json
   "ami_name": "RHEL-BASE-v{{user `build_number`}}-{{timestamp}}-AMI",

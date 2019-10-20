@@ -12,5 +12,6 @@ nav:
     - NULL: packer-null.md
     - Post-processor: post-processor.md
     - Variables: variables.md
+    - Help: help.md
     - About: about.md
-theme: readthedocs
+theme: material
