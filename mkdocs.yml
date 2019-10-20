@@ -14,7 +14,9 @@ nav:
     - Variables: variables.md
     - Help: help.md
     - About: about.md
-theme: material
+theme: 
+  name: material
+  favicon: 'assets/images/favicon.png'
 
 markdown_extensions:
   - admonition
