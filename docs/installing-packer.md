@@ -10,45 +10,15 @@ Or you could submit your new feature or fix yourself.
 
 ## Automated Installation options
 
-### Mac
-
-```cli
+``` mac tab="mac"
 brew install packer
 ```
 
-and
-
-```cli
-brew update packer
-```
-
-### Windows
-
-Via the Chocolatey package manager
-
-```cli
+``` powershell tab="powershell"
 cinst packer
 ```
 
-and then
-
-```cli
-cup packer
-```
-
-to update.
-
-Brew and Chocolatey repositories for Packer are usually up to date.
-
-### Linux
-
-Packer is published to **yum** and **apt-get** repositories but these installs
-require a substantial number of dependencies and can be quite out of date. At this time for Ubuntu 18 repository has v1.0.3 but v1.3.5 is current.
-
-To install  Packer via Bash (Ubuntu/Debian)
-Save this file as **setup-packer.sh**
-
-```bash
+``` bash tab="linux"
 #!/bin/bash
 set -exo
 curl https://keybase.io/hashicorp/pgp_keys.asc | gpg --import
@@ -79,14 +49,12 @@ rm "${TOOL}_${VERSION}_${EDITION}_SHA256SUMS"
 rm "${TOOL}_${VERSION}_SHA256SUMS.sig"
 
 "${TOOL}" --version
-
 ```
 
-To Install run:
+Brew and Chocolatey repositories for Packer are usually up to date.
 
-```cli
-sudo sh setup-packer.sh
-```
+Packer is published to **yum** and **apt-get** repositories but these installs
+require a substantial number of dependencies and can be quite out of date. At this time for Ubuntu 18 repository has v1.0.3 but v1.3.5 is current.
 
 ### Docker container
 
