@@ -302,7 +302,7 @@ These are two basic environmental variable that need setting:
 ```cli
 AWS_ACCESS_KEY_ID=xxxxxxxxx
 AWS_SECRET_ACCESS_KEY=xxxxxxxxx
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 You can check what you have set with:
 
@@ -310,13 +310,14 @@ Linux and Mac
 
 ```cli
 printenv
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 CMD Shell:
 
 ```cli
 set
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+```
 
 Powershell:
 
