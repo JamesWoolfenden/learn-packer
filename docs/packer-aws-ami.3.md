@@ -100,25 +100,23 @@ Again Packer has a variable for this:
 
 Which I have exposed as a variable. You can add a list of AWS account numbers to share it to. You dont need to have access to those accounts to share it with them.
 
-## Tips
+!!! Note "How to tidy up old AMI's"
+    
+    Packer is great at making an consuming AWS resources, it's not so good at cleaning up after itself when an AMI becomes obsolete.
+    AWS-Amicleaner from <https://github.com/bonclay7/aws-amicleaner> tries tp solve this issue.
 
-### How to tidy up old AMI's
+    ```bash
+    pip install future
+    pip install aws-amicleaner
+    amicleaner --version
+    ```
+    
+    To tidy up snapshots
+    
+    ```bash
+    amicleaner --check-orphans --full-report --keep-previous 20
+    ```
 
-Packer is great at making an consuming AWS resources, it's not so good at cleaning up after itself when an AMI becomes obsolete.
-AWS-Amicleaner from <https://github.com/bonclay7/aws-amicleaner> tries tp solve this issue.
-
-```bash
-pip install future
-pip install aws-amicleaner
-amicleaner --version
-```
-
-To tidy up snapshots
-
-```bash
-amicleaner --check-orphans --full-report --keep-previous 20
-```
-
-```bash
-amicleaner --mapping-key tags --mapping-values Application --full-report --keep-previous 20
-```
+    ```bash
+    amicleaner --mapping-key tags --mapping-values Application --full-report --keep-previous 20
+    ```

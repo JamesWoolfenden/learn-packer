@@ -130,8 +130,8 @@ $ packer -version
 1.35
 ```
 
-### Debugging
+!!! Note "Debugging"
+    
+    You can run Packer in Debug mode using the **-debug** flag, it's fairly verbose but it is particularly useful to need to see which AWS call fails and to get the temporary SSH key that's used to connect to the box used to make your AMI?
 
-You can run Packer in Debug mode using the **-debug** flag, it's fairly verbose but it is particularly useful to need to see which AWS call fails and to get the temporary SSH key that's used to connect to the box used to make your AMI?
-
-It'll happen.
+    It'll happen.
