@@ -1,7 +1,7 @@
 # Null builders
 
 This builder does Null or actually nothing. What's the use in that? Well sometimes you'll want to test some other part of a provisioner or post-processor and not wait 10 minutes for a build to run.
-It also does cost anything to run.
+It also doesn't cost anything to run.
 
 **packer-null.json** is the minimal configuration possible.
 
