@@ -430,10 +430,10 @@ Build 'docker' finished.
 
 So that's an example of nearly every key component to build your Dockerfile. All that's required is a tool to host it in.
 
-### The Cons
+!!! Note The Cons
 
-- Packer build only works with docker images that already have SSH on them.
-- Shell Provisioners - Bash scripts only run if you have Bash installed in your container.
-- Packer Docker builds can't build from 'scratch'.
-- Packer Provisioners use SSH, images like a Base Alpine will fail, so you can only base your containers that have SSH installed.
-- No Layer caching.
+    - Packer build only works with docker images that already have SSH on them.
+    - Shell Provisioners - Bash scripts only run if you have Bash installed in your container.
+    - Packer Docker builds can't build from 'scratch'.
+    - Packer Provisioners use SSH, images like a Base Alpine will fail, so you can only base your containers that have SSH installed.
+    - No Layer caching.

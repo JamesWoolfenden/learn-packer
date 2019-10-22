@@ -172,4 +172,4 @@ But that's if you like maintaining a large homegrown script codebase.
 
 <https://www.hashicorp.com/resources/what-is-mutable-vs-immutable-infrastructure>
 
-Make with mkdocs, for full documentation visit [mkdocs.org](https://mkdocs.org).
+Made with Mkdocs, for full documentation visit [mkdocs.org](https://mkdocs.org).
