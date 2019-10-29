@@ -4,23 +4,21 @@
       "type": "docker",
       "image": "ubuntu",
       "commit": true,
-      "changes": [
-        "CMD [\"./hello-world\"]"
-      ]
+      "changes": ["CMD [\"./hello-world\"]"]
     }
   ],
-   "provisioners": [
-     {
+  "provisioners": [
+    {
       "type": "file",
       "source": "hello-world",
       "destination": "hello-world"
     }
   ],
   "post-processors": [
-      {
-        "type": "docker-tag",
-        "repository": "hello-world",
-        "tag": "0.1"
-      }
-    ]
+    {
+      "type": "docker-tag",
+      "repository": "hello-world",
+      "tag": "0.1"
+    }
+  ]
 }

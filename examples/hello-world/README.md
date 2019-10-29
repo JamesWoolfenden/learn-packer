@@ -1,11 +1,11 @@
 # build hello world
 
- info https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04
- set to build for linux on amd64
+info <https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04>
+set to build for linux on amd64
 
 ## windows
 
-``` powershell
+```powershell
 $env:GOOS="linux"
 $env:GOARCH="amd64"
 go build .

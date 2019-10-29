@@ -10,15 +10,15 @@ Or you could submit your new feature or fix yourself.
 
 ## Automated Installation options
 
-``` mac tab="mac"
+```mac tab="mac"
 brew install packer
 ```
 
-``` powershell tab="powershell"
+```powershell tab="powershell"
 cinst packer
 ```
 
-``` bash tab="linux"
+```bash tab="linux"
 #!/bin/bash
 set -exo
 curl https://keybase.io/hashicorp/pgp_keys.asc | gpg --import
@@ -131,7 +131,7 @@ $ packer -version
 ```
 
 !!! Note "Debugging"
-    
+
     You can run Packer in Debug mode using the **-debug** flag, it's fairly verbose but it is particularly useful. If you need to see which AWS call fails and/or to get the temporary SSH key that's can be used to connect to the box used to make your AMI?
 
     It'll happen.

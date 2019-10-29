@@ -1,17 +1,17 @@
 {
-    "builders": [
-        {
-            "type": "null",
-            "ssh_username": "pogo",
-            "ssh_password": "BigYellowHair",
-            "ssh_host":     "192.168.1.139"
-        }
-    ],
-    "provisioners": [
-        {
-            "type": "file",
-            "source": "hello-world.sh",
-            "destination": "hello-world.sh"
-        }
-    ]
+  "builders": [
+    {
+      "type": "null",
+      "ssh_username": "pogo",
+      "ssh_password": "BigYellowHair",
+      "ssh_host": "192.168.1.139"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "hello-world.sh",
+      "destination": "hello-world.sh"
+    }
+  ]
 }

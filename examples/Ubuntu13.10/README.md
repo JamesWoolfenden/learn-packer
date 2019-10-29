@@ -23,6 +23,7 @@ My source is available here:
 
 You can use as is or you can add a post processor, you can add a Vagrant (there's quite a bit of left over support in the preseed)
 easily:
+
 ```packer
   "post-processors": [
     "vagrant"

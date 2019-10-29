@@ -139,7 +139,7 @@ Creating immutable images, with the only missing piece being environment
 specific configuration and keeping that to a minimum. Immutable Images are
 expected to be Stateless.
 
-### Why not update the images or Configuration manage the images we have?
+### Why not update the images or Configuration manage the images
 
 In place updates are riskier due to possible downtime, and applying fixes or
 updates to your current production Instance and Images could case an outage.

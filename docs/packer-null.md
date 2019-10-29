@@ -128,12 +128,12 @@ Another odd one for the development pile, allows you to test post-processors qui
 
 ```json
 {
-    "builders": [
-        {
-            "type": "file",
-            "content": "# File Header \n multi-line also \n The End",
-            "target":  "README.md"
-        }
-    ]
+  "builders": [
+    {
+      "type": "file",
+      "content": "# File Header \n multi-line also \n The End",
+      "target": "README.md"
+    }
+  ]
 }
 ```

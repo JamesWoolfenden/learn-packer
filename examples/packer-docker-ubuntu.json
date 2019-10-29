@@ -1,10 +1,10 @@
 {
-    "_comment": "Docker",
-    "builders": [
-        {
-            "type": "docker",
-            "image": "ubuntu",
-            "export_path": "export_image.tar"
-        }
-    ]
+  "_comment": "Docker",
+  "builders": [
+    {
+      "type": "docker",
+      "image": "ubuntu",
+      "export_path": "export_image.tar"
+    }
+  ]
 }

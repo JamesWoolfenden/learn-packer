@@ -1,10 +1,10 @@
 # Building an ISO image with Packer
 
 !!! Note "AVOID"
-    OK Building ISOs takes time and patience and is super fiddly.
-    There's much better ways to spend your time.  You can download these prebuilt from 
-    Canonical. [cloud-images.ubuntu.com](http://cloud-images.ubuntu.com/)
-    
+OK Building ISOs takes time and patience and is super fiddly.
+There's much better ways to spend your time. You can download these prebuilt from
+Canonical. [cloud-images.ubuntu.com](http://cloud-images.ubuntu.com/)
+
 You can make ISO/disc images for Virtual machine platforms using a number of
 Packer builders, I'm going to give a number of examples for VirtualBox and
 Ubuntu:-
@@ -17,18 +17,18 @@ The first example is to build a very basic Ubuntu vbox.
 
 ```json
 {
-    "builders": [
-        {
-            "type": "virtualbox-iso",
-            "guest_os_type": "Ubuntu_64",
-            "iso_url": "",
-            "iso_checksum": "",
-            "iso_checksum_type": "sha256",
-            "ssh_username": "packer",
-            "ssh_password": "packer",
-            "shutdown_command": "echo 'packer' | sudo -S shutdown -P now"
-        }
-    ]
+  "builders": [
+    {
+      "type": "virtualbox-iso",
+      "guest_os_type": "Ubuntu_64",
+      "iso_url": "",
+      "iso_checksum": "",
+      "iso_checksum_type": "sha256",
+      "ssh_username": "packer",
+      "ssh_password": "packer",
+      "shutdown_command": "echo 'packer' | sudo -S shutdown -P now"
+    }
+  ]
 }
 ```
 
@@ -50,18 +50,18 @@ Update your packer template, it should now look like this
 
 ```json
 {
-    "builders": [
-        {
-            "type": "virtualbox-iso",
-            "guest_os_type": "Ubuntu_64",
-            "iso_url": "http://releases.ubuntu.com/16.04/ubuntu-16.04.6-server-amd64.iso",
-            "iso_checksum": "16afb1375372c57471ea5e29803a89a5a6bd1f6aabea2e5e34ac1ab7eb9786ac",
-            "iso_checksum_type": "sha256",
-            "ssh_username": "packer",
-            "ssh_password": "packer",
-            "shutdown_command": "echo 'packer' | sudo -S shutdown -P now"
-        }
-    ]
+  "builders": [
+    {
+      "type": "virtualbox-iso",
+      "guest_os_type": "Ubuntu_64",
+      "iso_url": "http://releases.ubuntu.com/16.04/ubuntu-16.04.6-server-amd64.iso",
+      "iso_checksum": "16afb1375372c57471ea5e29803a89a5a6bd1f6aabea2e5e34ac1ab7eb9786ac",
+      "iso_checksum_type": "sha256",
+      "ssh_username": "packer",
+      "ssh_password": "packer",
+      "shutdown_command": "echo 'packer' | sudo -S shutdown -P now"
+    }
+  ]
 }
 ```
 
@@ -219,11 +219,8 @@ Also adding a script Provisioner
 
 ```json
 {
-    "type": "shell",
-    "execute_command": "echo '{{user `ssh_pass`}}' \| {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
-    "inline": [
-        "echo '%sudo ALL=(ALL) NOPASSWD:ALL'\>\> /etc/sudoers"
-        ]
+  "type": "shell",
+  "execute_command": "echo '{{user `ssh_pass`}}' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
+  "inline": ["echo '%sudo ALL=(ALL) NOPASSWD:ALL'>> /etc/sudoers"]
 }
-
 ```

@@ -6,13 +6,13 @@ So for completeness here's as example using the file builder in the file **packe
 
 ```json
 {
-    "builders": [
-        {
-            "type": "file",
-            "content": "# File Header \n multi-line also \n The End",
-            "target":  "output.md"
-        }
-    ]
+  "builders": [
+    {
+      "type": "file",
+      "content": "# File Header \n multi-line also \n The End",
+      "target": "output.md"
+    }
+  ]
 }
 ```
 

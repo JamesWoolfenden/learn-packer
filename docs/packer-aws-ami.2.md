@@ -108,7 +108,7 @@ If your AWS account is set-up to use a federated Authentication scheme (Active D
 
 How can I work?
 
-The command line tool  **saml2aws** <https://github.com/Versent/saml2aws> solves exactly this problem, it allows you to set up multiple profiles and then login to those profiles.
+The command line tool **saml2aws** <https://github.com/Versent/saml2aws> solves exactly this problem, it allows you to set up multiple profiles and then login to those profiles.
 It then updates your .aws configuration with temporary AWS credentials. You can then continue as before but either set the default profile or use named profiles.
 
 ### Via AWS IAM instance profile

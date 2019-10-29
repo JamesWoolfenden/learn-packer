@@ -1,14 +1,14 @@
 {
-    "builders": [
-        {
-            "type": "null",
-            "communicator": "none"
-        }
-    ],
-    "provisioners": [
-        {
-            "type": "shell-local",
-            "inline": "echo hello world"
-        }
-    ]
+  "builders": [
+    {
+      "type": "null",
+      "communicator": "none"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell-local",
+      "inline": "echo hello world"
+    }
+  ]
 }

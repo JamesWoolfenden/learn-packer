@@ -1,9 +1,9 @@
 {
-    "builders": [
-        {
-            "type": "file",
-            "content": "# File Header \n multi-line also \n The End",
-            "target":  "output.md"
-        }
-    ]
+  "builders": [
+    {
+      "type": "file",
+      "content": "# File Header \n multi-line also \n The End",
+      "target": "output.md"
+    }
+  ]
 }

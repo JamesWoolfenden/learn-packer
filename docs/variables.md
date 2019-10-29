@@ -18,11 +18,11 @@ Where the env.json looks like:
 
 ```json
 {
-    "instance_type": "t2.micro",
-    "vpc_id": "vpc-xxxxxxx",
-    "subnet_id": "subnet-xxxxxxx",
-    "ami_users": "xxxxxxxxxx",
-    "aws_region": "eu-west-1"
+  "instance_type": "t2.micro",
+  "vpc_id": "vpc-xxxxxxx",
+  "subnet_id": "subnet-xxxxxxx",
+  "ami_users": "xxxxxxxxxx",
+  "aws_region": "eu-west-1"
 }
 ```
 

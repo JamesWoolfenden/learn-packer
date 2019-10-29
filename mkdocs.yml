@@ -1,25 +1,25 @@
 site_name: Learn Packer
 nav:
-    - Home: index.md
-    - Installing: installing-packer.md
-    - AWS AMI: packer-aws-ami.md
-    - Advanced AWS authentication: packer-aws-ami.2.md
-    - Versioning: packer-aws-ami.3.md
-    - Docker: docker.md
-    - Ansible-Docker: ansible-docker.md
-    - File: packer-file.md
-    - ISO: packer-iso.md
-    - NULL: packer-null.md
-    - Post-processor: post-processor.md
-    - Variables: variables.md
-    - Help: help.md
-    - About: about.md
-theme: 
+  - Home: index.md
+  - Installing: installing-packer.md
+  - AWS AMI: packer-aws-ami.md
+  - Advanced AWS authentication: packer-aws-ami.2.md
+  - Versioning: packer-aws-ami.3.md
+  - Docker: docker.md
+  - Ansible-Docker: ansible-docker.md
+  - File: packer-file.md
+  - ISO: packer-iso.md
+  - NULL: packer-null.md
+  - Post-processor: post-processor.md
+  - Variables: variables.md
+  - Help: help.md
+  - About: about.md
+theme:
   name: material
-  favicon: 'assets/images/favicon.ico'
+  favicon: "assets/images/favicon.ico"
 
-repo_name: 'jamesWoolfenden/learn-packer-web'
-repo_url: 'https://github.com/jamesWoolfenden/learn-packer-web'
+repo_name: "jamesWoolfenden/learn-packer-web"
+repo_url: "https://github.com/jamesWoolfenden/learn-packer-web"
 
 markdown_extensions:
   - admonition
@@ -44,13 +44,13 @@ markdown_extensions:
 
 # Customization
 extra:
-  manifest: 'manifest.webmanifest'
+  manifest: "manifest.webmanifest"
   social:
-    - type: 'twitter'
-      link: 'https://twitter.com/slalom'
-    - type: 'linkedin'
-      link: 'https://linkedin.com/company/slalom-consulting/'
+    - type: "twitter"
+      link: "https://twitter.com/slalom"
+    - type: "linkedin"
+      link: "https://linkedin.com/company/slalom-consulting/"
 
 # Copyright
-copyright: 'Copyright &copy; 2019 - 2019 Slalom, LLC'
-site_author: 'James Woolfenden'
+copyright: "Copyright &copy; 2019 - 2019 Slalom, LLC"
+site_author: "James Woolfenden"
