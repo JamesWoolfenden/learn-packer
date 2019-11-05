@@ -1,6 +1,6 @@
 # Building an ISO image with Packer
 
-!!! Note "AVOID"
+!!!Note "AVOID"
     OK Building ISOs takes time and patience and is super fiddly.
     There's much better ways to spend your time. You can download these prebuilt from
     Canonical. [cloud-images.ubuntu.com](http://cloud-images.ubuntu.com/)
