@@ -1,6 +1,6 @@
 # Versioning
 
-For anything more than the basics you should have a "Bakery" a CI tool and process in place that regaular builds new iMages.
+For anything more than the basics you should have a "Bakery" a CI tool and process in place that regaular builds new images.
 A Scenario where AMI's are built routinely.
 
 This creates its own set of problems.
