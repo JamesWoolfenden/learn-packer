@@ -166,10 +166,9 @@ Scripting it all yourself using:
 
 But that's if you like maintaining a large homegrown script codebase.
 
-### Links
-
-<https://en.wikipedia.org/wiki/Software_release_life_cycle#RTM>
-
-<https://www.hashicorp.com/resources/what-is-mutable-vs-immutable-infrastructure>
+!!!Note Links
+    <https://en.wikipedia.org/wiki/Software_release_life_cycle#RTM>
+    
+    <https://www.hashicorp.com/resources/what-is-mutable-vs-immutable-infrastructure>
 
 Made with Mkdocs, for full documentation visit [mkdocs.org](https://mkdocs.org).
