@@ -8,10 +8,10 @@ There are multiple ways use variables with Packer Templates.
 packer build base.json -var 'region=eu-west-1'
 ```
 
-## From file
+## From a file
 
 ```cli
-packer build base.json -var-file en.json
+packer build base.json -var-file env.json
 ```
 
 Where the env.json looks like:
@@ -26,7 +26,7 @@ Where the env.json looks like:
 }
 ```
 
-## From Env
+## From Environmental Variables
 
 Any environmental Variable can be used in the template, to get AWS_ACCESS_KEY_ID:
 

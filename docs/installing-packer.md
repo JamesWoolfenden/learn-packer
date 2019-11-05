@@ -23,7 +23,7 @@ cinst packer
 set -exo
 curl https://keybase.io/hashicorp/pgp_keys.asc | gpg --import
 apt-get install unzip
-VERSION="1.3.5"
+VERSION="1.4.4"
 TOOL="packer"
 EDITION="linux_amd64"
 cd /usr/local/bin
@@ -54,7 +54,7 @@ rm "${TOOL}_${VERSION}_SHA256SUMS.sig"
 Brew and Chocolatey repositories for Packer are usually up to date.
 
 Packer is published to **yum** and **apt-get** repositories but these installs
-require a substantial number of dependencies and can be quite out of date. At this time for Ubuntu 18 repository has v1.0.3 but v1.3.5 is current.
+require a substantial number of dependencies and can be quite out of date. At this time for Ubuntu 18 repository has v1.0.3 but v1.4.4 is current.
 
 ### Docker container
 
@@ -87,7 +87,7 @@ You will need to pass in the Packer files by sharing the host folder into Packer
 docker run -v
 /c/code/book/packer/01-installing-packer/:/home/docker/
 hashicorp/packer:light validate /home/docker/empty.json
-``
+```
 
 But when you run the build:
 

@@ -2,7 +2,7 @@
 
 ## What is Packer
 
-Packer is an open source image creation tool made by Hashicorp, it can make the images that make our instances, be that VMware, AWS or Docker and many other platforms.
+Packer is an open source image creation tool made by Hashicorp, it can make the images that make our instances, be that on VMware, AWS or Docker and many other platforms.
 When the term "**Infrastructure As Code**" is used, it is one of the foundational tools that are
 attributed to that term.
 
@@ -128,7 +128,7 @@ Available commands are:
     version     Prints the Packer version
 
 $ packer version
-Packer v1.3.5
+Packer v1.4.4
 ```
 
 ## Why Packer

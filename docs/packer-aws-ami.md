@@ -145,10 +145,10 @@ A better way is to create just the permission you need, for a role, by creating
 a Packer role and inline policy in AWS. This role is describe in Terraform here
 as 2 files, in your terraform IAM project **aws_iam_role_policy.packer.tf**.
 
-```packer
-resource "aws_iam_role_policy" "packer" {
+```terraform
+resource aws_iam_role_policy packer {
     name="packer"
-    role = "${aws_iam_role.packer.id}"
+    role = aws_iam_role.packer.id
     policy=<<POLICY
 {
   "Version": "2012-10-17",
@@ -197,8 +197,8 @@ resource "aws_iam_role_policy" "packer" {
 
 And **aws_iam_role.packer.tf**
 
-```packer
-resource "aws_iam_role" "packer" {
+```terraform
+resource aws_iam_role packer {
     name="packer"
     assume_role_policy=<<POLICY
 {
@@ -308,27 +308,16 @@ You can check what you have set with:
 
 Linux and Mac
 
-```cli
+```cli Tab="*nix"
 printenv
 ```
 
-CMD Shell:
-
-```cli
+```cli Tab="CMD.exe"
 set
-
 ```
 
-Powershell:
-
-```cli
+```powershell tab="Powershell"
 Get-ChildItem Env:
-```
-
-or even
-
-```cli
-gci env:
 ```
 
 With Use Export, set \$env: to set your variables, you can temporarily set
@@ -382,42 +371,10 @@ $ packer build basic-auth.withcreds.json
 Time to try this all out again:
 
 ```cli
-packer build **basic-auth.withcreds.json**
+packer build basic-auth.withcreds.json
 ```
 
-```cli
-amazon-ebs output will be in this color.
+<img src="https://gist.github.com/JamesWoolfenden/54a1dab9fe6c809c20392a086a4eeb11/raw/c5ec3e866ff610c7db6ec05e54db7de18f0348e8/termtosvg__w83xo1p.svg?sanitize=true">
 
-==> amazon-ebs: Prevalidating AMI Name: packer-example 1553457154
-    amazon-ebs: Found Image ID: ami-01bc69b830b49f729
-==> amazon-ebs: Creating temporary keypair: packer_5c97e004-6f6f-6dc2-3e9e-13855f2e15a8
-==> amazon-ebs: Creating temporary security group for this instance: packer_5c97e00c-347c-e002-1ea9-465df486f213
-==> amazon-ebs: Authorizing access to port 22 from 0.0.0.0/0 in the temporary security group...
-==> amazon-ebs: Launching a source AWS instance...
-==> amazon-ebs: Adding tags to source instance
-    amazon-ebs: Adding tag: "Name": "Packer Builder"
-    amazon-ebs: Instance ID: i-0cd168e9cc01e840a
-==> amazon-ebs: Waiting for instance (i-0cd168e9cc01e840a) to become ready...
-==> amazon-ebs: Using ssh communicator to connect: 54.154.196.67
-==> amazon-ebs: Waiting for SSH to become available...
-==> amazon-ebs: Connected to SSH!
-==> amazon-ebs: Stopping the source instance...
-    amazon-ebs: Stopping instance, attempt 1
-==> amazon-ebs: Waiting for the instance to stop...
-==> amazon-ebs: Creating unencrypted AMI packer-example 1553457154 from instance i-0cd168e9cc01e840a
-    amazon-ebs: AMI: ami-024901a4c2f50690b
-==> amazon-ebs: Waiting for AMI to become ready...
-==> amazon-ebs: Terminating the source AWS instance...
-==> amazon-ebs: Cleaning up any extra volumes...
-==> amazon-ebs: No volumes to clean up, skipping
-==> amazon-ebs: Deleting temporary security group...
-==> amazon-ebs: Deleting temporary keypair...
-Build 'amazon-ebs' finished.
-
-==> Builds finished. The artifacts of successful builds are:
---> amazon-ebs: AMIs were created:
-eu-west-1: ami-024901a4c2f50690b
-```
-
-So if you only have on account this might seem like a lot of extra cruft. In
+So if you only have one account this might seem like a lot of extra cruft. In
 other situations it's a life saver.

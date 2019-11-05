@@ -1,6 +1,6 @@
 # Versioning
 
-For anything more than the basics you should have a "Bakery" a CI tool and process in place that regaular builds new iMages.
+For anything more than the basics you should have a "Bakery" a CI tool and process in place that regaular builds new images.
 A Scenario where AMI's are built routinely.
 
 This creates its own set of problems.
@@ -67,14 +67,12 @@ It's much quicker to find AMIS details via the commandline.
 
 Via Powershell
 
-```powershell
+```powershell tab="Powershell"
 aws ec2 describe-images --filter Name="name",Values="CentOS7*"|convertfrom-json
 aws ec2 describe-images --filter Name="ProductCode",Values="aw0evgkw8e5c1q413zgy5pjce"|convertfrom-json
 ```
 
-Via Bash
-
-```Bash
+```Bash tab="Bash"
 aws ec2 describe-images \
  --owners 679593333241 \
  --filters \

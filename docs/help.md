@@ -1,6 +1,6 @@
 # Help
 
-If its been useful, let me know. If it out of date or broken also. I'll appreciate it. Or If you think somethings missing or contribute?
+If its been useful, let me know. If it out of date or broken also. I'll appreciate it the info. Or If you think somethings missing or contribute?
 
 **Got a question?**
 

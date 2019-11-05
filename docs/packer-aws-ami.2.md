@@ -30,7 +30,7 @@ Assuming roles isn't yet supported directly in Packers EBS builder syntax, so fo
 
 You can create your AWS credentials on-the-fly by calling this Powershell or a bash function and then create the environment variables to run Packer.
 
-```powershell
+```powershell tab="Powershell"
 function iam_assume_role
 {
   <#
@@ -64,9 +64,7 @@ function iam_assume_role
 }
 ```
 
-This achieves the same in Bash:
-
-```bash
+```bash tab="Bash"
 # Clear out existing AWS session environment, or the awscli call will fail
 unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN AWS_SECURITY_TOKEN
 
@@ -129,7 +127,7 @@ You can then connect your new IAM instance profile to your EC2 instance :
 **aws_instance.packer.tf** below demonstrate how to tie it all together:
 
 ```terraform
-resource "aws_instance" "packer" {
+resource aws_instance packer {
   ami                         = data.aws_ami.ubuntu.image_id
   iam_instance_profile        = aws_iam_instance_profile.packer.name
   instance_type               = var.instance_type
@@ -143,4 +141,4 @@ resource "aws_instance" "packer" {
 }
 ```
 
-If you provision this instance it should have the permission packer requires.
+If you provision this instance it should have the permission Packer requires.

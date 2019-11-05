@@ -1,3 +1,5 @@
+---
+# yamllint disable rule:indentation
 site_name: Learn Packer
 nav:
   - Home: index.md
