@@ -65,3 +65,5 @@ extra:
 # Copyright
 copyright: "Copyright &copy; 2019 - 2019 Slalom, LLC"
 site_author: "James Woolfenden"
+google_analytics:
+  ["UA-151885688-2", "slalom-consulting-ltd.github.io/learn-packer/"]
