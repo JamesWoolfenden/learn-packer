@@ -164,6 +164,8 @@ Scripting it all yourself using:
 
 - Powershell
 
+- SSH
+
 But that's if you like maintaining a large homegrown script codebase.
 
 !!!Note Links
