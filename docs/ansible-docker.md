@@ -3,9 +3,9 @@
 As of writing there’s still no support for running Ansible on Windows [except via WSL], so to
 run these examples you will have to have a Mac Or Linux.
 
-## Pre-requisite
+## Pre-requisites
 
-Ansible needs to be installed. On Ubuntu thats:
+Ansible needs to be installed. On Ubuntu that's:
 
 ```bash
 sudo apt update
@@ -14,7 +14,7 @@ sudo apt-add-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible
 ```
 
-For other platforms refere to or see the Ansible site itself <https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html>
+For other platforms refer to or see the Ansible site itself [https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 
 Ansible **Galaxy** is pre-packaged with Ansible.
 
@@ -33,7 +33,7 @@ $ ansible-galaxy install --roles-path . migibert.terraform
 
 You now have a folder **migibert.terraform**.
 
-You can build these up into playbooks and provsioners, I made many of these to make some Confluent/Kafka Images here:
+You can build these up into playbooks and provisioners, I made many of these to make some Confluent/Kafka Images here:
 <https://github.com/JamesWoolfenden/packer-by-example/blob/master/packfiles/redhat/confluent-connect.json>
 
 ```json
