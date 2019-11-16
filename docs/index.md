@@ -13,7 +13,7 @@ attributed to that term.
 Packer can be used to make Machine Images, be they Virtual Machine Server Instances or Containers.
 Hashicorps Packer is fully open source and the sourcecode is on Github here
 <https://github.com/hashicorp/packer>, and as you can see it is written in
-Golang. 
+Golang.
 
 As well as examining the code you can see current issues/defects
 <https://github.com/hashicorp/packer/issues> and submit your own.
@@ -136,6 +136,7 @@ Available commands are:
 $ packer version
 Packer v1.4.4
 ```
+
 Current release of Packer ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/hashicorp/packer)
 
 ## Why Packer
