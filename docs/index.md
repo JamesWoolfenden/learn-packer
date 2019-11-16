@@ -1,5 +1,9 @@
 # Learn Packer
 
+[![Latest Release](https://img.shields.io/github/v/tag/slalom-consulting-ltd/learn-packer.svg)](https://github.com/JamesWoolfenden/learn-packer-web)
+
+By [James Woolfenden](https://www.linkedin.com/in/jameswoolfenden/)
+
 ## What is Packer
 
 Packer is an open source image creation tool made by Hashicorp, it can make the images that make our instances, be that on VMware, AWS or Docker and many other platforms.
