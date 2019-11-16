@@ -1,6 +1,7 @@
 # Installing Packer
 
-Packer is a system for creating images and multiple image types from a single file.
+Packer is a tool for creating images and multiple image types from a single file.
+
 Manual Installation instructions are well documented on the Packer website.
 Packer like Terraform, is frequently updated with new features, as well
 as fixes, which are well documented in its changelog
