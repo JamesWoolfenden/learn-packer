@@ -6,19 +6,21 @@ By [James Woolfenden](https://www.linkedin.com/in/jameswoolfenden/)
 
 ## What is Packer
 
-Packer is an open source image creation tool made by Hashicorp, it can make the images that make our instances, be that on VMware, AWS or Docker and many other platforms.
+Packer is a cross platform and open source machine image creation tool, made by Hashicorp. Packer can make the images that launch our instance.
 When the term "**Infrastructure As Code**" is used, it is one of the foundational tools that are
 attributed to that term.
 
-As stated Packer can be used to make Machine Images be they Server Instances or Containers.
-Hashicorp Packer is fully open source and the sourcecode is on Github here
+Packer can be used to make Machine Images, be they Virtual Machine Server Instances or Containers.
+Hashicorps Packer is fully open source and the sourcecode is on Github here
 <https://github.com/hashicorp/packer>, and as you can see it is written in
-Golang. As well as examining the code you can see current issues/defects
+Golang. 
+
+As well as examining the code you can see current issues/defects
 <https://github.com/hashicorp/packer/issues> and submit your own.
 
 All the examples can be found and copied from <https://github.com/JamesWoolfenden/learn-packer-web/tree/master/examples>
 
-Packer uses the term "templates" to refer to the files passed to the tool, are
+The Packer term "templates" is used to refer to the files passed to the tool, are
 JSON files. **base-ami.json** below is a fully fledged AMI creastion example for AWS.
 
 ```packer
@@ -134,6 +136,7 @@ Available commands are:
 $ packer version
 Packer v1.4.4
 ```
+Current release of Packer ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/hashicorp/packer)
 
 ## Why Packer
 
