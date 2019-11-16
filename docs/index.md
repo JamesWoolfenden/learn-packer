@@ -6,7 +6,7 @@ By [James Woolfenden](https://www.linkedin.com/in/jameswoolfenden/)
 
 ## What is Packer
 
-Packer is a cross platform and open source machine image creation tool, made by Hashicorp. Packer can make the images that launch our instance.
+Packer is a cross platform and open source machine image creation tool, made by Hashicorp. Packer can make the images that launch our instances.
 When the term "**Infrastructure As Code**" is used, it is one of the foundational tools that are
 attributed to that term.
 
