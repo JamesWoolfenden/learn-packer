@@ -7,17 +7,17 @@ This creates its own set of problems.
 
 Greatest of which are "How do I know which AMI is the best?", "How do build a new Imagine and Not Break something" and "Which of these Images has been tried and tested?"
 
-The Images/AMIs themselves are a software Artifact and should have a development process like they do.
+The Images/AMIs themselves are a software Artifact and should have a development process like others do.
 
-When we build a Java library and version it, we can do the same if we name or tag it with a Build number. But I already have a git hash? The git hash does identify it, but it doesn't work well with Humans, QA or ordering. Thanks Git.
+When you build a Java library you version it, and you can do the same with Packer images if you name or tag it with a Build number. "But I already have a git hash?" The git hash does identify it, but it doesn't work well with Humans, QA or ordering. Thanks Git.
 
 ## A basic numbering Scheme
 
-[You could use semantic versioning or any scheme you like]
+You can use semantic versioning or any scheme you like, but use Semantic or AKA SemVer.
 
-Most CI tools provide/expose and environmental variable or BUILD_NUMBER that can be used.
+Most CI tools, that you might drive your "Bakery" will provide/expose and/or sn environmental variable or BUILD_NUMBER that can be used.
 
-Add a variable to your template, this will to pull the environment variable BUILD_NUMBER into Packer.
+Add a variable to your template, such as **BUILD_NUMBER** and this will to pull the environment variable BUILD_NUMBER into Packer.
 
 ```json
   "build_number": "{{env `BUILD_NUMBER`}}",
@@ -62,7 +62,7 @@ This filter will get the latest RHEL 7.6 that's published by AWS account 3099561
 
 ## Finding AMI'S
 
-It's much quicker to find AMIS details via the commandline.
+It's much quicker to find AMI's details via the commandline.
 (<https://aws.amazon.com/blogs/compute/query-for-the-latest-amazon-linux-ami-ids-using-aws-systems-manager-parameter-store/>)
 
 Via Powershell
