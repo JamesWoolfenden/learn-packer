@@ -1,3 +1,11 @@
 {
-  "cSpell.words": ["Ansible", "amicleaner", "awscli", "commandline", "rhelbase"]
+  "cSpell.words": [
+    "APPDATA",
+    "Ansible",
+    "USERPROFILE",
+    "amicleaner",
+    "awscli",
+    "commandline",
+    "rhelbase"
+  ]
 }
