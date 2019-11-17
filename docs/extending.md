@@ -1,8 +1,8 @@
 # Third Party Extensions
 
-The comment provisioner is a third party extension for Packer, and is a bit of fun, so what's not to like! If your have the Golang Build environment already set-up.
+The comment provisioner is an example of a third party extension for Packer, and is a little bit of fun, so what's not to like! If you have the Golang Build environment already set-up that is.
 
-Clone their repository and build the executable.
+Clone the repository and build the executable.
 
 ```go
 git clone https://github.com/SwampDragons/packer-provisioner-comment
