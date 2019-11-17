@@ -14,6 +14,7 @@ nav:
   - NULL: packer-null.md
   - Post-processor: post-processor.md
   - Variables: variables.md
+  - Extending: extending.md
   - Help: help.md
   - About: about.md
 theme:

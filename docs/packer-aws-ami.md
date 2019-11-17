@@ -312,7 +312,7 @@ Linux and Mac
 printenv
 ```
 
-```cmd tab="CMD.exe"
+```cmd tab="CMD"
 set
 ```
 
@@ -371,7 +371,7 @@ $ packer build basic-auth.withcreds.json
 Time to try this all out again:
 
 ```cli
-packer build basic-auth.withcreds.json
+$ packer build basic-auth.withcreds.json
 ```
 
 <img src="https://gist.github.com/JamesWoolfenden/54a1dab9fe6c809c20392a086a4eeb11/raw/c5ec3e866ff610c7db6ec05e54db7de18f0348e8/termtosvg__w83xo1p.svg?sanitize=true">
