@@ -62,7 +62,7 @@ require a substantial number of dependencies and can be quite out of date. At th
 You can also you use Packer from a container
 
 ```docker
-docker pull hashicorp/packer
+$docker pull hashicorp/packer
 
 docker images
 REPOSITORY                                                             TAG                 IMAGE ID            CREATED             SIZE
@@ -72,20 +72,20 @@ hashicorp/packer                                                       latest   
 You can run it much line the regular cmdline.
 
 ```cli
-docker run 2453d5a18479 --version
+$docker run 2453d5a18479 --version
 1.35
 ```
 
 Or
 
 ```cli
-docker run -i -t hashicorp/packer:light validate
+$docker run -i -t hashicorp/packer:light validate
 ```
 
 You will need to pass in the Packer files by sharing the host folder into Packers Container.
 
 ```docker
-docker run -v
+$docker run -v
 /c/code/book/packer/01-installing-packer/:/home/docker/
 hashicorp/packer:light validate /home/docker/empty.json
 ```
@@ -93,7 +93,7 @@ hashicorp/packer:light validate /home/docker/empty.json
 But when you run the build:
 
 ```docker
-docker run -v
+$docker run -v
 /c/code/book/packer/01-installing-packer/:/home/docker/
 hashicorp/packer:light build /home/docker/empty.json
 ```

@@ -308,11 +308,11 @@ You can check what you have set with:
 
 Linux and Mac
 
-```cli Tab="*nix"
+```bash tab="*nix"
 printenv
 ```
 
-```cli Tab="CMD.exe"
+```cmd tab="CMD.exe"
 set
 ```
 
