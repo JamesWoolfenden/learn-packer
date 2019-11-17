@@ -1,6 +1,6 @@
 # Versioning
 
-For anything more than the basics you should have a "Bakery" a CI tool and process in place that regaular builds new images.
+For anything more than the basics you should have a "Bakery" a CI tool and process in place that regular builds new images.
 A Scenario where AMI's are built routinely.
 
 This creates its own set of problems.
@@ -23,7 +23,7 @@ Add a variable to your template, this will to pull the environment variable BUIL
   "build_number": "{{env `BUILD_NUMBER`}}",
 ```
 
-Then modify the AMI name to refelct the new scheme:
+Then modify the AMI name to reflect the new scheme:
 
 ```json
   "ami_name": "RHEL-BASE-v{{user `build_number`}}-{{timestamp}}-AMI",
@@ -96,7 +96,7 @@ Again Packer has a variable for this:
 "ami_users": "{{ user `ami_users` }}",
 ```
 
-Which I have exposed as a variable. You can add a list of AWS account numbers to share it to. You dont need to have access to those accounts to share it with them.
+Which I have exposed as a variable. You can add a list of AWS account numbers to share it to. You don't need to have access to those accounts to share it with them.
 
 !!! Note "How to tidy up old AMI's"
 
