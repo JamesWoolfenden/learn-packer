@@ -1,6 +1,6 @@
 resource "aws_iam_role_policy" "packer" {
   name = "packer"
-  role = "${aws_iam_role.packer.id}"
+  role = aws_iam_role.packer.id
 
   policy = <<POLICY
 {

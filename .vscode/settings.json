@@ -3,9 +3,12 @@
     "APPDATA",
     "Ansible",
     "USERPROFILE",
+    "amazonaws",
     "amicleaner",
     "awscli",
     "commandline",
-    "rhelbase"
-  ]
+    "rhelbase",
+    "userdata"
+  ],
+  "cSpell.enabled": true
 }
