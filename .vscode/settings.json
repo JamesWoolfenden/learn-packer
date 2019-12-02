@@ -2,13 +2,19 @@
   "cSpell.words": [
     "APPDATA",
     "Ansible",
+    "Imagebuilder",
+    "Imagemaker",
     "USERPROFILE",
     "amazonaws",
     "amicleaner",
+    "artifacts",
     "awscli",
     "commandline",
+    "playbooks",
+    "provisioners",
     "rhelbase",
-    "userdata"
+    "userdata",
+    "versioning"
   ],
   "cSpell.enabled": true
 }

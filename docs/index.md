@@ -160,7 +160,7 @@ you:
 
 - no reliance on externalities or third parties
 
-- treat images as software artifacts with same CI process and versioning
+- treat images as software artefacts with same CI process and versioning
 
 ### What are the alternatives to Packer
 
@@ -174,11 +174,17 @@ Scripting it all yourself using:
 
 - SSH
 
-But that's if you like maintaining a large homegrown script codebase.
+But that's if you like maintaining a large home-grown script codebase.
+
+And more recently:
+
+- AWS imagebuilder
 
 !!!Note Links
     <https://en.wikipedia.org/wiki/Software_release_life_cycle#RTM>
     
     <https://www.hashicorp.com/resources/what-is-mutable-vs-immutable-infrastructure>
+    
+    <https://aws.amazon.com/about-aws/whats-new/2019/12/introducing-ec2-image-builder>
 
 Made with Mkdocs, for full documentation visit [mkdocs.org](https://mkdocs.org).

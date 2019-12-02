@@ -15,6 +15,7 @@ nav:
   - Post-processor: post-processor.md
   - Variables: variables.md
   - Extending: extending.md
+  - Imagebuilder: imagebuilder.md
   - Help: help.md
   - About: about.md
 theme:
