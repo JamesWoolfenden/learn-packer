@@ -61,13 +61,14 @@ phases:
 
 There are already a number of defined build components and adding your own bash or ps1 files looks straight forward.
 
-### Questions
+!!! Questions
+    
+    - Can I or how do I reference Ansible playbooks
+    
+    - Git repo for components updates and modifications
+    At the moment you upload all you related files to S3, I would have though a git repo with associated triggers would be good. 
+    - YAML component The syntax for was the component support
 
-- How do reference Ansible playbooks
-
-- Git repo for components updates and modifications
-
-- YAML component The syntax for was the component support
 
 ## Tests
 
