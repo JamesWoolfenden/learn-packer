@@ -1,0 +1,48 @@
+{
+  "variables": {
+    "aws_access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
+    "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
+    "build_number": "{{env `BUILD_NUMBER`}}",
+    "instance_type": "t2.micro"
+  },
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "access_key": "{{user `aws_access_key`}}",
+      "secret_key": "{{user `aws_secret_key`}}",
+      "region": "{{user `aws_region`}}",
+      "source_ami_filter": {
+        "filters": {
+          "virtualization-type": "hvm",
+          "name": "Windows_Server-2019-English-Full-Base*",
+          "root-device-type": "ebs"
+        },
+        "owners": ["self", "amazon"],
+        "most_recent": true
+      },
+      "instance_type": "{{ user `instance_type` }}",
+      "user_data_file": "bootstrap_win.txt",
+      "communicator": "winrm",
+      "winrm_username": "Administrator",
+      "winrm_timeout": "10m",
+      "winrm_password": "SuperS3cr3t!!!!",
+      "ami_name": "Base v{{user `version`}} Windows2019",
+      "ami_description": "Windows 2019 Base",
+      "ami_virtualization_type": "hvm",
+      "vpc_id": "{{user `vpc_id`}}",
+      "subnet_id": "{{user `subnet_id`}}"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "powershell",
+      "inline": [
+        "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))|out-null"
+      ]
+    },
+    {
+      "type": "powershell",
+      "inline": ["choco install javaruntime -y -force"]
+    }
+  ]
+}

@@ -7,20 +7,14 @@ repos:
       - id: trailing-whitespace
       - id: end-of-file-fixer
       - id: check-added-large-files
+      - id: detect-aws-credentials
+      - id: detect-private-key
   - repo: git://github.com/Lucas-C/pre-commit-hooks
     rev: v1.1.7
     hooks:
       - id: forbid-tabs
         exclude_types: [python, javascript, dtd, markdown, makefile]
         exclude: binary|\.bin$
-  - repo: https://github.com/pre-commit/pre-commit-hooks.git
-    rev: v2.4.0
-    stages:
-      - commit
-      - push
-    hooks:
-      - id: detect-aws-credentials
-      - id: detect-private-key
   - repo: https://github.com/detailyang/pre-commit-shell
     rev: 1.0.5
     hooks:
