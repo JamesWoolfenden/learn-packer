@@ -34,7 +34,7 @@ Support for all features found in Packer file is not yet complete, but to give y
         "most_recent": true
       },
       "instance_type": "{{ user `instance_type` }}",
-      "user_data_file": "bootstrap_win.txt",
+      "user_data_file": "{{template_dir}}/bootstrap_win.txt",
       "communicator": "winrm",
       "winrm_username": "Administrator",
       "winrm_timeout": "10m",
@@ -80,7 +80,7 @@ source "amazon-ebs" "Windows2019" {
       }
       ami_name= "Base v1 Windows2019"
       ami_description= "Windows 2019 Base"
-      user_data_file= "{{template_dir}}bootstrap_win.txt"
+      user_data_file= "bootstrap_win.txt"
       communicator= "winrm"
       winrm_username= "Administrator"
       winrm_timeout= "10m"
@@ -102,7 +102,7 @@ sources =[
 ```
 
 So what has changed, besides the brackets and commas?
-There's no support for variables yet [it's more alpha than beta] and you can only have one prvisioner of each type as yet, but i think the look is clearer.
+There's no support for variables yet [it's more alpha than beta] and functions and you can only have one provisioner of each type as yet, but I do think the look is clearer.
 It looks like they plan to be able to pass parameters around like you can in Terraform. So this should be a good thing.
 
 - to be continued...
