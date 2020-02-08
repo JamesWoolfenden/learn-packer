@@ -1,11 +1,12 @@
 # HCL2
 
-At the Beginning of Feb 2020 Hashicorp announced that they were supporting HCL2 for Packer files.
+At the Beginning of Feb 2020 Hashicorp announced that they were supporting HCL2 for Packer files. 
+They're not dropping support for json.
 
-## What's different
+## What's different and whats better?
 
-The quick answer is that they will look more like Terraform and code like than data- **json**.
-Support for all features in Packer file is not yet complete but to give you an idea of howe they compare, here's a short traditional windows example.
+The quick answer is that Packer files will a look more like Terraform and so it looks more like code than data- **json**.
+Support for all features found in Packer file is not yet complete, but to give you an idea of how they compare, here's a short traditional Windows example with the new format.
 
 .\examples\hcl2vjson1\json1\winserver2019-aws.json
 
@@ -101,5 +102,6 @@ sources =[
 ```
 
 So what has changed, besides the brackets and commas?
+It looks like they plan to be able to pass parameters around like you can in Terraform. So this should be a good thing.
 
 - to be continued...
