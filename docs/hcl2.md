@@ -1,9 +1,9 @@
 # HCL2
 
-At the Beginning of Feb 2020 Hashicorp announced that they were supporting HCL2 for Packer files. 
+At the Beginning of Feb 2020 Hashicorp announced that they were supporting HCL2 for Packer files.
 They're not dropping support for json.
 
-## What's different and what's better?
+## What's different and what's better
 
 The quick answer is that Packer files will a look more like Terraform and so it looks more like code than data- **json**.
 Support for all features found in Packer file is not yet complete, but to give you an idea of how they compare, here's a short traditional Windows example with the new format.
@@ -63,7 +63,7 @@ Support for all features found in Packer file is not yet complete, but to give y
 
 In HCL2 this comes[the file extension is required]:
 
-.\examples\hcl2vjson1\hcl2\awswin2k19.pkr.hcl
+.\examples\hcl2vjson1\hcl2\amazon-ebs.Windows2019.pkr.hcl
 
 ```hcl
 source "amazon-ebs" "Windows2019" {
@@ -78,13 +78,16 @@ source "amazon-ebs" "Windows2019" {
         most_recent= true
         owners= ["amazon"]
       }
-      ami_name= "Base v1 Windows2019"
+      ami_name= "Base v1 Windows2019 {{timestamp}}"
       ami_description= "Windows 2019 Base"
-      user_data_file= "bootstrap_win.txt"
+      associate_public_ip_address="true"
+      user_data_file= "./HCL2/bootstrap_win.txt"
       communicator= "winrm"
       winrm_username= "Administrator"
       winrm_timeout= "10m"
       winrm_password="SuperS3cr3t!!!!"
+      #using spot market as cheaper
+      spot_price="0"
       #if empty it uses the default vpc, COMMENTS!!!!
       vpc_id= ""
       subnet_id=""
@@ -104,10 +107,11 @@ sources =[
 ## Build folders
 
 Packer can now target a folder and build all the **.hcl** files in one folder.
-We can seperate the build block into:
+We can separate the build block into:
 
-*build2win2k19.pkr.hcl*
-```
+build.Windows2019.pkr.hcl
+
+```hcl
 build {
 sources =[
    "source.amazon-ebs.Windows2019"
@@ -120,12 +124,17 @@ sources =[
 ```
 
 And build by specifying the folder:
+
 ```cli
 packer build .\hcl2\
 ```
 
+Separating built type from Provisioners should make for better re-use.
+
+## Findings
+
 So what has changed, besides the brackets and commas?
 There's no support for variables yet [it's more alpha than beta] and functions and you can only have one provisioner of each type as yet, but I do think the look is clearer.
-It looks like they plan to be able to pass parameters around like you can in Terraform. So this should be a good thing.
+It looks like they plan to be able to pass parameters around like you can in Terraform. So this should be a good thing as is the splitting into multiple files.
 
 - to be continued...

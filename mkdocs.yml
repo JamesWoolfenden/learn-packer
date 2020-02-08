@@ -16,7 +16,7 @@ nav:
   - Variables: variables.md
   - Extending: extending.md
   - Imagebuilder: imagebuilder.md
-  - functions: functions.md
+  - Functions: functions.md
   - HCL2: hcl2.md
   - Help: help.md
   - About: about.md

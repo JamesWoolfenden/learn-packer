@@ -9,3 +9,11 @@ If you have to reference another file in a provisioner or as in the line below t
 ```json
 "user_data_file": "{{template_dir}}/bootstrap_win.txt"
 ```
+
+## timestamp
+
+Always useful, to make name and strings unique.
+
+```json
+"{{timestamp}}"
+```
