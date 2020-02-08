@@ -101,6 +101,29 @@ sources =[
 }
 ```
 
+## Build folders
+
+Packer can now target a folder and build all the **.hcl** files in one folder.
+We can seperate the build block into:
+
+*build2win2k19.pkr.hcl*
+```
+build {
+sources =[
+   "source.amazon-ebs.Windows2019"
+]
+ provisioner "powershell" {
+    inline = ["iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))|out-null"
+      ,"choco install javaruntime -y -force"]
+  }
+}
+```
+
+And build by specifying the folder:
+```cli
+packer build .\hcl2\
+```
+
 So what has changed, besides the brackets and commas?
 There's no support for variables yet [it's more alpha than beta] and functions and you can only have one provisioner of each type as yet, but I do think the look is clearer.
 It looks like they plan to be able to pass parameters around like you can in Terraform. So this should be a good thing.
