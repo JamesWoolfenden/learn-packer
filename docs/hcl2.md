@@ -102,6 +102,7 @@ sources =[
 ```
 
 So what has changed, besides the brackets and commas?
+There's no support for variables yet [it's more alpha than beta] and you can only have one prvisioner of each type as yet, but i think the look is clearer.
 It looks like they plan to be able to pass parameters around like you can in Terraform. So this should be a good thing.
 
 - to be continued...
