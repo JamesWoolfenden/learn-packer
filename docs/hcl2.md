@@ -3,7 +3,7 @@
 At the Beginning of Feb 2020 Hashicorp announced that they were supporting HCL2 for Packer files. 
 They're not dropping support for json.
 
-## What's different and whats better?
+## What's different and what's better?
 
 The quick answer is that Packer files will a look more like Terraform and so it looks more like code than data- **json**.
 Support for all features found in Packer file is not yet complete, but to give you an idea of how they compare, here's a short traditional Windows example with the new format.
