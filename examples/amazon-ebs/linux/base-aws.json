@@ -4,21 +4,25 @@
     "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
     "aws_session_token": "{{env `AWS_SESSION_TOKEN`}}",
     "build_number": "{{env `BUILD_NUMBER`}}",
-    "aws-region": "{{env `AWS_REGION`}}"
+    "aws-region": "{{env `AWS_REGION`}}",
+    "provisioner_path": "{{template_dir}}/../../..",
+    "instance_type": "t2.micro"
   },
   "provisioners": [
     {
       "type": "shell",
-      "script": "provisioners/scripts/linux/redhat/install_ansible.sh"
+      "script": "{{ user `provisioner_path` }}/provisioners/scripts/linux/redhat/install_ansible.sh"
     },
     {
       "type": "shell",
-      "script": "provisioners/scripts/linux/redhat/install_aws_ssm.sh"
+      "script": "{{ user `provisioner_path` }}/provisioners/scripts/linux/redhat/install_aws_ssm.sh"
     },
     {
       "type": "ansible-local",
-      "playbook_file": "provisioners/ansible/playbooks/cloudwatch-metrics.yml",
-      "role_paths": ["provisioners/ansible/roles/cloudwatch-metrics"]
+      "playbook_file": "{{ user `provisioner_path` }}/provisioners/ansible/playbooks/cloudwatch-metrics.yml",
+      "role_paths": [
+        "{{ user `provisioner_path` }}/provisioners/ansible/roles/cloudwatch-metrics"
+      ]
     }
   ],
   "builders": [
@@ -46,6 +50,7 @@
       "temporary_key_pair_name": "rhel-packer-{{timestamp}}",
       "vpc_id": "{{user `vpc_id`}}",
       "subnet_id": "{{user `subnet_id`}}",
+      "spot_price": "auto",
       "associate_public_ip_address": true,
       "run_tags": {
         "Name": "rhel-base-packer",
