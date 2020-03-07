@@ -134,7 +134,7 @@ Available commands are:
     version     Prints the Packer version
 
 $ packer version
-Packer v1.4.4
+Packer v1.5.2
 ```
 
 Current release of Packer ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/hashicorp/packer)

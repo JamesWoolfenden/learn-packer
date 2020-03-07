@@ -7,7 +7,7 @@ To build with a Dockerfile, and to save to it to a registry requires 2 steps, fi
 
 In Packer this entire process can be captured in one file, encapsulating all that's required, and as a bonus the whole process is runnable locally. Which make for quick debug cycle times.
 
-Using Packer also allows the use and re-use of scripts and to use Ansible role and playbook as used in other platform builds.
+Using Packer also allows the use and re-use of scripts and to use Ansible role and playbooks as used in other platform builds.
 
 ## A very basic Packer Docker template
 

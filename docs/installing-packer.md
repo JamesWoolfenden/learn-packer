@@ -55,7 +55,7 @@ rm "${TOOL}_${VERSION}_SHA256SUMS.sig"
 Brew and Chocolatey repositories for Packer are usually up to date.
 
 Packer is published to **yum** and **apt-get** repositories but these installs
-require a substantial number of dependencies and can be quite out of date. At this time for Ubuntu 18 repository has v1.0.3 but v1.4.4 is current.
+require a substantial number of dependencies and can be quite out of date. At this time for Ubuntu 18 repository has v1.0.3 but v1.5.2 is current.
 
 ### Docker container
 
