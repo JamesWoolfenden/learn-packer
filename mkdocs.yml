@@ -18,6 +18,7 @@ nav:
   - Imagebuilder: imagebuilder.md
   - Functions: functions.md
   - HCL2: hcl2.md
+  - Sharing: share.md
   - Help: help.md
   - About: about.md
 theme:
