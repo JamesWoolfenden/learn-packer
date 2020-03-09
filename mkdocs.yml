@@ -9,7 +9,7 @@ nav:
   - Versioning: packer-aws-ami.3.md
   - Docker: 
     - docker: docker.md
-    - docker-hcl: dockerhcl2.md
+    - docker-hcl: docker-hcl2.md
   - Ansible-Docker: ansible-docker.md
   - File: packer-file.md
   - ISO: packer-iso.md
