@@ -1,4 +1,4 @@
-# Packer-Docker
+# Packer-Docker HCL2
 
 Using Packer to build Docker might seem a bit strange at first. Aren't Dockerfiles a standard for building Docker containers?
 I'd be thinking this'll never fly with my JS developers? But It can make sense.
@@ -9,61 +9,54 @@ In Packer this entire process can be captured in one file, encapsulating all tha
 
 Using Packer also allows the use and re-use of scripts and to use Ansible role and playbooks as used in other platform builds.
 
+These HCL2 based examples target folders not individual files.
+
 ## A very basic Packer Docker template
 
-Starting really simple with **packer-docker-ubuntu.json**.
+Starting really simple with **examples-hcl/packer-docker-ubuntu**, this contains a source **docker.base1604.pkr.hcl** 
 
-```json
-{
-  "_comment": "Docker",
-  "builders": [
-    {
-      "type": "docker",
-      "image": "ubuntu",
-      "export_path": "image.tar"
-    }
+``` HCL
+source "docker" "base1604" {
+      image= "ubuntu"
+      export_path= "export_image.tar"
+}
+
+```
+
+and build file **build.base1604.pkr.hcl**
+
+```HCL
+build {
+sources=[
+  "source.docker.base1604"
   ]
+
 }
 ```
 
 Building this template with..
 
 ```cli
-$ packer build packer-docker-ubuntu.json
-docker output will be in this color.
+$  packer build .\packer-docker-ubuntu\
+docker: output will be in this color.
 
 ==> docker: Creating a temporary directory for sharing data...
 ==> docker: Pulling Docker image: ubuntu
     docker: Using default tag: latest
     docker: latest: Pulling from library/ubuntu
-    docker: 898c46f3b1a1: Pulling fs layer
-    docker: 63366dfa0a50: Pulling fs layer
-    docker: 041d4cd74a92: Pulling fs layer
-    docker: 6e1bee0f8701: Pulling fs layer
-    docker: 6e1bee0f8701: Waiting
-    docker: 041d4cd74a92: Verifying Checksum
-    docker: 041d4cd74a92: Download complete
-    docker: 63366dfa0a50: Verifying Checksum
-    docker: 63366dfa0a50: Download complete
-    docker: 6e1bee0f8701: Download complete
-    docker: 898c46f3b1a1: Verifying Checksum
-    docker: 898c46f3b1a1: Download complete
-    docker: 898c46f3b1a1: Pull complete
-    docker: 63366dfa0a50: Pull complete
-    docker: 041d4cd74a92: Pull complete
-    docker: 6e1bee0f8701: Pull complete
-    docker: Digest: sha256:017eef0b616011647b269b5c65826e2e2ebddbe5d1f8c1e56b3599fb14fabec8
-    docker: Status: Downloaded newer image for ubuntu:latest
+    docker: Digest: sha256:04d48df82c938587820d7b6006f5071dbbffceb7ca01d2814f81857c631d44df
+    docker: Status: Image is up to date for ubuntu:latest
+    docker: docker.io/library/ubuntu:latest
 ==> docker: Starting docker container...
-    docker: Run command: docker run -v /home/jim/.packer.d/tmp:/packer-files -d -i -t ubuntu /bin/bash
-    docker: Container ID: 2dc59e83c81eef5feb0bfa5370a1616bdae5effa93b01ca6378716815582425d
+    docker: Run command: docker run -v C:\Users\james.woolfenden\packer.d\tmp766628703:/packer-files -d -i -t --entrypoint=/bin/sh -- ubuntu
+    docker: Container ID: dd47b23d66f207284f54d6cd9803aa8a219842909d14b4fe037336539df36cde
 ==> docker: Using docker communicator to connect: 172.17.0.2
 ==> docker: Exporting the container
-==> docker: Killing the container: 2dc59e83c81eef5feb0bfa5370a1616bdae5effa93b01ca6378716815582425d
+==> docker: Killing the container: dd47b23d66f207284f54d6cd9803aa8a219842909d14b4fe037336539df36cde
 Build 'docker' finished.
 
 ==> Builds finished. The artifacts of successful builds are:
---> docker: Exported Docker file: image.tar
+--> docker: Exported Docker file: export_image.tar
 ```
 
 OK so that's Not that useful yet. Yet.
@@ -74,27 +67,22 @@ So far you have seen demonstrated that a build of a container with Packer, but i
 Next is to start plugging in other components.
 
 First up is a post-processor, used to tag the container.
-Enter the example **packer-docker-tag-empty.json**
+Add this section to **build.base1604.pkr.hcl** after the sources.
 
-```json
-{
-  "variables": {
-    "tag": "{{env `BUILD_NUMBER`}}"
-  },
-  "builders": [
-    {
-      "type": "docker",
-      "image": "ubuntu",
-      "commit": true
-    }
-  ],
-  "post-processors": [
-    {
-      "type": "docker-tag",
-      "tag": "{{user `tag`}}"
-    }
-  ]
+```HCL
+post-processor "docker-tag" {
+      tag= "my-tag"
 }
+```
+
+and change **docker.base1604.pkr.hcl** to:
+
+```HCL
+source "docker" "base1604" {
+      image= "ubuntu"
+      commit= true
+}
+
 ```
 
 Still not exactly Rocket Science yet, is it.
