@@ -14,3 +14,6 @@ TODO
 
 TODO
 
+## Via public route
+
+## Via private route

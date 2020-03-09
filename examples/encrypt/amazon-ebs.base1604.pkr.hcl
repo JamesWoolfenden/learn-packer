@@ -8,8 +8,8 @@ source "amazon-ebs" "base1604" {
   instance_type  = var.instance_type
   region         = var.region
   region_kms_key_ids {
-      eu-west-1= "alias/ami-sharing"
-      eu-west-2= "alias/ami-sharing"
+      eu-west-1= "alias/ami-shared"
+      eu-west-2= "alias/ami-shared"
     }
   run_tags {
     Name= "ubuntu-base-packer"
