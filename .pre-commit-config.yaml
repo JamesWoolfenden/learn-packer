@@ -2,7 +2,7 @@
 # yamllint disable rule:indentation
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.4.0
+    rev: v3.2.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
@@ -10,7 +10,7 @@ repos:
       - id: detect-aws-credentials
       - id: detect-private-key
   - repo: git://github.com/Lucas-C/pre-commit-hooks
-    rev: v1.1.7
+    rev: v1.1.9
     hooks:
       - id: forbid-tabs
         exclude_types: [python, javascript, dtd, markdown, makefile]
@@ -20,11 +20,11 @@ repos:
     hooks:
       - id: shell-lint
   - repo: git://github.com/igorshubovych/markdownlint-cli
-    rev: v0.19.0
+    rev: v0.23.2
     hooks:
       - id: markdownlint
   - repo: git://github.com/adrienverge/yamllint
-    rev: v1.18.0
+    rev: v1.25.0
     hooks:
       - id: yamllint
         name: yamllint
@@ -33,6 +33,6 @@ repos:
         language: python
         types: [file, yaml]
   - repo: https://github.com/prettier/prettier
-    rev: 1.18.2
+    rev: 2.1.2
     hooks:
       - id: prettier

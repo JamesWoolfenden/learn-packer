@@ -1,6 +1,6 @@
 # Learn Packer
 
-[![Latest Release](https://img.shields.io/github/v/tag/slalom-consulting-ltd/learn-packer.svg)](https://github.com/JamesWoolfenden/learn-packer-web)
+[![Latest Release](https://img.shields.io/github/v/tag/jameswoolfenden/learn-packer.svg)](https://github.com/JamesWoolfenden/learn-packer-web)
 
 By [James Woolfenden](https://www.linkedin.com/in/jameswoolfenden/)
 
@@ -181,10 +181,10 @@ And more recently:
 - AWS imagebuilder
 
 !!!Note Links
-    <https://en.wikipedia.org/wiki/Software_release_life_cycle#RTM>
-    
+<https://en.wikipedia.org/wiki/Software_release_life_cycle#RTM>
+
     <https://www.hashicorp.com/resources/what-is-mutable-vs-immutable-infrastructure>
-    
+
     <https://aws.amazon.com/about-aws/whats-new/2019/12/introducing-ec2-image-builder>
 
 Made with Mkdocs, for full documentation visit [mkdocs.org](https://mkdocs.org).
