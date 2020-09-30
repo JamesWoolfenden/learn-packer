@@ -7,7 +7,9 @@ nav:
   - AWS AMI: packer-aws-ami.md
   - Advanced AWS authentication: packer-aws-ami.2.md
   - Versioning: packer-aws-ami.3.md
-  - Docker: docker.md
+  - Docker: 
+    - docker: docker.md
+    - docker-hcl: docker-hcl2.md
   - Ansible-Docker: ansible-docker.md
   - File: packer-file.md
   - ISO: packer-iso.md

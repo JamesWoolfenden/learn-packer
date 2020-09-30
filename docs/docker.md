@@ -70,7 +70,7 @@ OK so that's Not that useful yet. Yet.
 
 ## Tagging with a post-processor
 
-So far you have seen demostrated that a build of a container with Packer, but it's not good for much yet.
+So far you have seen demonstrated that a build of a container with Packer, but it's not good for much yet.
 Next is to start plugging in other components.
 
 First up is a post-processor, used to tag the container.

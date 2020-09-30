@@ -9,3 +9,7 @@ variable "key" {
 variable "accounts" {
   type = list
 }
+
+variable "alias" {
+  type=string
+}
