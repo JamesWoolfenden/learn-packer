@@ -13,11 +13,11 @@ These HCL2 based examples target folders not individual files.
 
 ## A very basic Packer Docker template
 
-Starting really simple with **examples-hcl/packer-docker-ubuntu**, this contains a source **docker.base1604.pkr.hcl** 
+Starting really simple with **examples-hcl/packer-docker-ubuntu**, this contains a source **docker.base1604.pkr.hcl**
 
-From examples\packer-docker-ubuntu at <https://github.com/jamesWoolfenden/learn-packer-web/>.
+From examples\packer-docker-ubuntu at <https://github.com/jamesWoolfenden/learn-packer/>.
 
-``` HCL
+```HCL
 source "docker" "base1604" {
       image= "ubuntu"
       export_path= "export_image.tar"
@@ -113,3 +113,4 @@ Push to ECR
     - Packer Docker builds can't build from 'scratch'.
     - Packer Provisioners use SSH, images like a Base Alpine will fail, so you can only base your containers that have SSH installed.
     - No Layer caching.
+```

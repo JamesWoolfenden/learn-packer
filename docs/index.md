@@ -1,6 +1,6 @@
 # Learn Packer
 
-[![Latest Release](https://img.shields.io/github/v/tag/jameswoolfenden/learn-packer.svg)](https://github.com/JamesWoolfenden/learn-packer-web)
+[![Latest Release](https://img.shields.io/github/v/tag/jameswoolfenden/learn-packer.svg)](https://github.com/JamesWoolfenden/learn-packer)
 
 By [James Woolfenden](https://www.linkedin.com/in/jameswoolfenden/)
 
@@ -18,7 +18,7 @@ Golang.
 As well as examining the code you can see current issues/defects
 <https://github.com/hashicorp/packer/issues> and submit your own.
 
-All the examples can be found and copied from <https://github.com/JamesWoolfenden/learn-packer-web/tree/master/examples>
+All the examples can be found and copied from <https://github.com/JamesWoolfenden/learn-packer/tree/master/examples>
 
 The Packer term "templates" is used to refer to the files passed to the tool, are
 JSON files. **base-ami.json** below is a fully fledged AMI creastion example for AWS.

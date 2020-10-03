@@ -4,7 +4,7 @@
 
 You can use Packer and share your AMI across regions, Packer will copy your disk snapshot to the specified region[this will take a while depending on the disk volume size].
 
-Code: <https://github.com/JamesWoolfenden/learn-packer-web/tree/master/examples/share-to-region>
+Code: <https://github.com/JamesWoolfenden/learn-packer/tree/master/examples/share-to-region>
 
 In **amazon-ebs.base1604.pkr.hcl** that's adding "ami_regions = var.ami_regions"
 
@@ -56,7 +56,7 @@ $ packer build  share-to-region/
 
 ### Sharing across accounts
 
-This is similar to regions, add in adding: 
+This is similar to regions, add in adding:
 
 ```HCL
 ami_users = var.ami_users
@@ -109,7 +109,7 @@ module "kms" {
 }
 ```
 
-But add to the list *accounts* specify the accounts you want to share to. 
+But add to the list _accounts_ specify the accounts you want to share to.
 
 See the folder **examples/kms** for a fully worked up example.
 
