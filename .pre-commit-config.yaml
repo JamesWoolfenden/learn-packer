@@ -1,7 +1,7 @@
 ---
 # yamllint disable rule:indentation
 repos:
-  - repo: https://github.com/pre-commit/pre-commit-hooks
+  - repo: git://github.com/pre-commit/pre-commit-hooks
     rev: v3.2.0
     hooks:
       - id: trailing-whitespace
@@ -15,7 +15,7 @@ repos:
       - id: forbid-tabs
         exclude_types: [python, javascript, dtd, markdown, makefile]
         exclude: binary|\.bin$
-  - repo: https://github.com/detailyang/pre-commit-shell
+  - repo: git://github.com/detailyang/pre-commit-shell
     rev: 1.0.5
     hooks:
       - id: shell-lint
@@ -32,7 +32,7 @@ repos:
         entry: yamllint
         language: python
         types: [file, yaml]
-  - repo: https://github.com/prettier/prettier
+  - repo: git://github.com/prettier/prettier
     rev: 2.1.2
     hooks:
       - id: prettier

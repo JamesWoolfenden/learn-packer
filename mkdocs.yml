@@ -7,9 +7,9 @@ nav:
   - AWS AMI: packer-aws-ami.md
   - Advanced AWS authentication: packer-aws-ami.2.md
   - Versioning: packer-aws-ami.3.md
-  - Docker: 
-    - docker: docker.md
-    - docker-hcl: docker-hcl2.md
+  - Docker:
+      - docker: docker.md
+      - docker-hcl: docker-hcl2.md
   - Ansible-Docker: ansible-docker.md
   - File: packer-file.md
   - ISO: packer-iso.md
@@ -25,10 +25,13 @@ nav:
   - About: about.md
 theme:
   name: material
+  features:
+    - navigation.tabs
+    - navigation.instant
   favicon: "assets/images/favicon.ico"
 
-repo_name: "jamesWoolfenden/learn-packer-web"
-repo_url: "https://github.com/jamesWoolfenden/learn-packer-web"
+repo_name: "jamesWoolfenden/learn-packer"
+repo_url: "https://github.com/jamesWoolfenden/learn-packer"
 
 markdown_extensions:
   - admonition
@@ -62,11 +65,11 @@ plugins:
 extra:
   manifest: "manifest.webmanifest"
   social:
-    - type: "github"
+    - icon: fontawesome/brands/github-alt
       link: "https://github.com/jameswoolfenden"
-    - type: "twitter"
+    - icon: fontawesome/brands/twitter
       link: "https://twitter.com/JimWoolfenden"
-    - type: "linkedin"
+    - icon: fontawesome/brands/linkedin
       link: "https://www.linkedin.com/in/jameswoolfenden/"
 
 # Copyright
