@@ -45,7 +45,7 @@ So you can now imagine there are some scenarios where it does make some sense af
 
 Try making and running **packer-null-file.json**
 
-````packer
+```packer
 {
     "builders": [
         {
@@ -78,7 +78,7 @@ Build 'null' finished.
 
 ==> Builds finished. The artifacts of successful builds are:
 --> null: Did not export anything. This is the null builder
-````
+```
 
 ### Shell-local
 
