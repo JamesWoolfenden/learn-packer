@@ -1,57 +1,59 @@
 {
-  "variables": {
-    "aws_access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
-    "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
-    "winrm_username": "Administrator",
-    "winrm_password": "SuperS3cr3t!",
-    "region": "eu-west-1"
-  },
   "builders": [
     {
-      "type": "amazon-ebs",
       "access_key": "{{ user `aws_access_key` }}",
-      "secret_key": "{{ user `aws_secret_key` }}",
-      "region": "{{ user `region` }}",
+      "ami_name": "packer-demo-{{timestamp}}",
+      "communicator": "winrm",
       "instance_type": "t2.micro",
+      "region": "{{ user `region` }}",
+      "secret_key": "{{ user `aws_secret_key` }}",
       "source_ami_filter": {
         "filters": {
-          "virtualization-type": "hvm",
           "name": "*Windows_Server-2016-English-Full-Base*",
-          "root-device-type": "ebs"
+          "root-device-type": "ebs",
+          "virtualization-type": "hvm"
         },
         "most_recent": true,
         "owners": "amazon"
       },
-      "ami_name": "packer-demo-{{timestamp}}",
+      "type": "amazon-ebs",
       "user_data_file": "./bootstrap_win.txt",
-      "communicator": "winrm",
-      "winrm_username": "{{ user `winrm_username`}}",
-      "winrm_password": "{{ user `winrm_password`}}"
+      "winrm_password": "{{ user `winrm_password`}}",
+      "winrm_username": "{{ user `winrm_username`}}"
     }
   ],
   "provisioners": [
     {
-      "type": "powershell",
-      "environment_vars": ["DEVOPS_LIFE_IMPROVER=PACKER"],
+      "environment_vars": [
+        "DEVOPS_LIFE_IMPROVER=PACKER"
+      ],
       "inline": [
         "Write-Host \"HELLO NEW USER; WELCOME TO $Env:DEVOPS_LIFE_IMPROVER\"",
         "Write-Host \"You need to use backtick escapes when using\"",
         "Write-Host \"characters such as DOLLAR`$ directly in a command\"",
         "Write-Host \"or in your own scripts.\""
-      ]
+      ],
+      "type": "powershell"
     },
     {
       "type": "windows-restart"
     },
     {
-      "script": "./sample_script.ps1",
-      "type": "powershell",
       "environment_vars": [
         "VAR1=A$Dollar",
         "VAR2=A`Backtick",
         "VAR3=A'SingleQuote",
         "VAR4=A\"DoubleQuote"
-      ]
+      ],
+      "script": "./sample_script.ps1",
+      "type": "powershell"
     }
-  ]
+  ],
+  "variables": {
+    "aws_access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
+    "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
+    "region": "eu-west-1",
+    "winrm_password": "SuperS3cr3t!",
+    "winrm_username": "Administrator"
+  }
 }

@@ -1,21 +1,6 @@
 {
-  "variables": {
-    "ssh_fullname": "packer",
-    "ssh_password": "packer",
-    "ssh_username": "packer"
-  },
   "builders": [
     {
-      "vm_name": "ubuntu-1804",
-      "type": "hyperv-iso",
-      "iso_url": "http://cdimage.ubuntu.com/ubuntu/releases/bionic/release/ubuntu-18.04.2-server-amd64.iso",
-      "iso_checksum": "a2cb36dc010d98ad9253ea5ad5a07fd6b409e3412c48f1860536970b073c98f5",
-      "iso_checksum_type": "sha256",
-      "ssh_username": "{{user `ssh_username`}}",
-      "ssh_password": "{{user `ssh_password`}}",
-      "ssh_timeout": "1h",
-      "http_directory": "http",
-      "shutdown_command": "echo 'packer' | sudo -S shutdown -P now",
       "boot_command": [
         "<esc><wait>",
         "<esc><wait>",
@@ -38,7 +23,22 @@
         " grub-installer/bootdev=/dev/sda<wait>",
         " noapic<wait>",
         " -- <wait>"
-      ]
+      ],
+      "http_directory": "http",
+      "iso_checksum": "a2cb36dc010d98ad9253ea5ad5a07fd6b409e3412c48f1860536970b073c98f5",
+      "iso_checksum_type": "sha256",
+      "iso_url": "http://cdimage.ubuntu.com/ubuntu/releases/bionic/release/ubuntu-18.04.2-server-amd64.iso",
+      "shutdown_command": "echo 'packer' | sudo -S shutdown -P now",
+      "ssh_password": "{{user `ssh_password`}}",
+      "ssh_timeout": "1h",
+      "ssh_username": "{{user `ssh_username`}}",
+      "type": "hyperv-iso",
+      "vm_name": "ubuntu-1804"
     }
-  ]
+  ],
+  "variables": {
+    "ssh_fullname": "packer",
+    "ssh_password": "packer",
+    "ssh_username": "packer"
+  }
 }

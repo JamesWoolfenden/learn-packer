@@ -1,19 +1,19 @@
 {
-  "variables": {
-    "tag": "{{env `BUILD_NUMBER`}}"
-  },
   "builders": [
     {
-      "type": "docker",
+      "commit": true,
       "image": "ubuntu",
-      "commit": true
+      "type": "docker"
     }
   ],
   "post-processors": [
     {
-      "type": "docker-tag",
+      "repository": "dave",
       "tag": "{{user `tag`}}",
-      "repository": "dave"
+      "type": "docker-tag"
     }
-  ]
+  ],
+  "variables": {
+    "tag": "{{env `BUILD_NUMBER`}}"
+  }
 }

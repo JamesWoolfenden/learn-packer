@@ -25,8 +25,18 @@
       "ssh_wait_timeout": "10000s",
       "type": "virtualbox-iso",
       "vboxmanage": [
-        ["modifyvm", "{{.Name}}", "--memory", "2048"],
-        ["modifyvm", "{{.Name}}", "--cpus", "4"]
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--memory",
+          "2048"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--cpus",
+          "4"
+        ]
       ],
       "virtualbox_version_file": ".vbox_version"
     }
@@ -38,11 +48,15 @@
           "execute_command": "echo 'vagrant' | sudo -S sh '{{ .Path }}'"
         }
       },
-      "scripts": ["scripts/root_setup.sh"],
+      "scripts": [
+        "scripts/root_setup.sh"
+      ],
       "type": "shell"
     },
     {
-      "scripts": ["scripts/setup.sh"],
+      "scripts": [
+        "scripts/setup.sh"
+      ],
       "type": "shell"
     }
   ]

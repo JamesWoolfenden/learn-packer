@@ -1,30 +1,32 @@
 {
   "builders": [
     {
-      "type": "amazon-ebs",
       "access_key": "",
-      "secret_key": "",
+      "ami_name": "packer-example {{timestamp}}",
+      "instance_type": "t2.micro",
       "region": "eu-west-1",
+      "secret_key": "",
       "source_ami_filter": {
         "filters": {
-          "virtualization-type": "hvm",
           "name": "ubuntu/images/*ubuntu-xenial-16.04-amd64-server-*",
-          "root-device-type": "ebs"
+          "root-device-type": "ebs",
+          "virtualization-type": "hvm"
         },
-        "owners": ["099720109477"],
-        "most_recent": true
+        "most_recent": true,
+        "owners": [
+          "099720109477"
+        ]
       },
-      "instance_type": "t2.micro",
       "ssh_username": "ubuntu",
-      "ami_name": "packer-example {{timestamp}}",
+      "subnet_filter": {
+        "most_free": true,
+        "random": true
+      },
+      "type": "amazon-ebs",
       "vpc_filter": {
         "filters": {
           "isDefault": "true"
         }
-      },
-      "subnet_filter": {
-        "most_free": true,
-        "random": true
       }
     }
   ]

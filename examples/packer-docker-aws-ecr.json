@@ -1,34 +1,33 @@
 {
-  "_comment": "Docker AWS ECR",
-  "variables": {
-    "tag": "{{env `BUILD_NUMBER`}}",
-    "repository": "123456789012.dkr.ecr.eu-west-1.amazonaws.com/aws-codebuild-container",
-    "aws_access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
-    "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
-    "login_server": "https://123456789012.dkr.ecr.eu-west-1.amazonaws.com/"
-  },
   "_comment": "SSH needs to be on container for shell provisioner",
   "builders": [
     {
-      "type": "docker",
+      "commit": true,
       "image": "hashicorp/terraform",
-      "commit": true
+      "type": "docker"
     }
   ],
   "post-processors": [
     [
       {
-        "type": "docker-tag",
+        "repository": "{{user `repository`}}",
         "tag": "{{user `tag`}}",
-        "repository": "{{user `repository`}}"
+        "type": "docker-tag"
       },
       {
-        "type": "docker-push",
-        "ecr_login": true,
         "aws_access_key": "{{user `aws_access_key`}}",
         "aws_secret_key": "{{user `aws_secret_key`}}",
-        "login_server": "{{user `login_server`}}"
+        "ecr_login": true,
+        "login_server": "{{user `login_server`}}",
+        "type": "docker-push"
       }
     ]
-  ]
+  ],
+  "variables": {
+    "aws_access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
+    "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
+    "login_server": "https://123456789012.dkr.ecr.eu-west-1.amazonaws.com/",
+    "repository": "123456789012.dkr.ecr.eu-west-1.amazonaws.com/aws-codebuild-container",
+    "tag": "{{env `BUILD_NUMBER`}}"
+  }
 }

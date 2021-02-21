@@ -1,32 +1,6 @@
 {
-  "variables": {
-    "hostname": "ubuntu",
-    "domain": "local",
-    "switch_name": "External Switch",
-    "ssh_user": "packer",
-    "ssh_pass": "p@ck3r"
-  },
   "builders": [
     {
-      "type": "virtualbox-iso",
-      "guest_os_type": "Ubuntu_64",
-      "vm_name": "ubuntu-18.04-vbox-template",
-      "iso_url": "http://cdimage.ubuntu.com/releases/18.04/release/ubuntu-18.04.2-server-amd64.iso",
-      "iso_checksum": "34416ff83179728d54583bf3f18d42d2",
-      "iso_checksum_type": "md5",
-      "memory": "1024",
-      "cpus": "1",
-      "disk_size": "20000",
-      "format": "ova",
-      "guest_additions_mode": "upload",
-      "headless": "false",
-      "http_directory": "http",
-      "switch_name": "{{user `switch_name`}}",
-      "ssh_pty": "true",
-      "ssh_username": "{{user `ssh_user`}}",
-      "ssh_password": "{{user `ssh_pass`}}",
-      "ssh_wait_timeout": "20m",
-      "shutdown_command": "sudo /sbin/halt -p",
       "boot_command": [
         "<enter><wait><f6><esc><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
         "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
@@ -54,14 +28,42 @@
         " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg",
         " -- <wait>",
         "<enter><wait><enter>"
-      ]
+      ],
+      "cpus": "1",
+      "disk_size": "20000",
+      "format": "ova",
+      "guest_additions_mode": "upload",
+      "guest_os_type": "Ubuntu_64",
+      "headless": "false",
+      "http_directory": "http",
+      "iso_checksum": "34416ff83179728d54583bf3f18d42d2",
+      "iso_checksum_type": "md5",
+      "iso_url": "http://cdimage.ubuntu.com/releases/18.04/release/ubuntu-18.04.2-server-amd64.iso",
+      "memory": "1024",
+      "shutdown_command": "sudo /sbin/halt -p",
+      "ssh_password": "{{user `ssh_pass`}}",
+      "ssh_pty": "true",
+      "ssh_username": "{{user `ssh_user`}}",
+      "ssh_wait_timeout": "20m",
+      "switch_name": "{{user `switch_name`}}",
+      "type": "virtualbox-iso",
+      "vm_name": "ubuntu-18.04-vbox-template"
     }
   ],
   "provisioners": [
     {
-      "type": "shell",
       "execute_command": "echo '{{user `ssh_pass`}}' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
-      "inline": ["echo '%sudo    ALL=(ALL)  NOPASSWD:ALL' >> /etc/sudoers"]
+      "inline": [
+        "echo '%sudo    ALL=(ALL)  NOPASSWD:ALL' >> /etc/sudoers"
+      ],
+      "type": "shell"
     }
-  ]
+  ],
+  "variables": {
+    "domain": "local",
+    "hostname": "ubuntu",
+    "ssh_pass": "p@ck3r",
+    "ssh_user": "packer",
+    "switch_name": "External Switch"
+  }
 }

@@ -1,24 +1,26 @@
 {
   "builders": [
     {
-      "type": "docker",
-      "image": "ubuntu",
+      "changes": [
+        "CMD [\"./hello-world\"]"
+      ],
       "commit": true,
-      "changes": ["CMD [\"./hello-world\"]"]
-    }
-  ],
-  "provisioners": [
-    {
-      "type": "file",
-      "source": "hello-world",
-      "destination": "hello-world"
+      "image": "ubuntu",
+      "type": "docker"
     }
   ],
   "post-processors": [
     {
-      "type": "docker-tag",
       "repository": "hello-world",
-      "tag": "0.1"
+      "tag": "0.1",
+      "type": "docker-tag"
+    }
+  ],
+  "provisioners": [
+    {
+      "destination": "hello-world",
+      "source": "hello-world",
+      "type": "file"
     }
   ]
 }
