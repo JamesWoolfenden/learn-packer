@@ -62,11 +62,11 @@ phases:
 There are already a number of defined build components and adding your own bash or ps1 files looks straight forward.
 
 !!! Questions
-    
+
     - Can I, or how do I reference Ansible playbooks.
-    
+
     - Git repo for components updates and modifications
-    At the moment you upload all you related files to S3, I would have though a git repo with associated triggers would be good. 
+    At the moment you upload all you related files to S3, I would have though a git repo with associated triggers would be good.
     - YAML component The syntax for was the component support
 
 ## Tests
@@ -123,10 +123,10 @@ As you can see it looks a lot like codebuild, however it does support versioned 
 Hopefully it will easy to pick up the versions for use with launching instances.
 
 !!! Questions
-    How does this integrate with Amazon Inspector?
-    
+How does this integrate with Amazon Inspector?
+
     Why do we now have 2 different build pipelines, with this and AWS Codepipeline.
 
 ## Running from the cli
- 
+
 <https://docs.aws.amazon.com/imagebuilder/latest/userguide/managing-image-builder-cli.html>

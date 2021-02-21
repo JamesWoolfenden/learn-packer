@@ -1,9 +1,9 @@
 # Building an ISO image with Packer
 
 !!!Note "AVOID"
-    OK Building ISOs takes time and patience and is super fiddly.
-    There's much better ways to spend your time. You can download these prebuilt from
-    Canonical. [cloud-images.ubuntu.com](http://cloud-images.ubuntu.com/)
+OK Building ISOs takes time and patience and is super fiddly.
+There's much better ways to spend your time. You can download these prebuilt from
+Canonical. [cloud-images.ubuntu.com](http://cloud-images.ubuntu.com/)
 
 You can make ISO/disc images for Virtual machine platforms using a number of
 Packer builders, I'm going to give a number of examples for VirtualBox and

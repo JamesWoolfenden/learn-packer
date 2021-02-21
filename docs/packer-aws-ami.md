@@ -7,7 +7,7 @@ trusted sources such as from Canonical (Makers of Ubuntu) which are provided to
 your from their AWS account.
 
 You can also build your AMI's from scratch by extending the builders in Packer
-ISO chapter, but if theres a choice of not having to deal with answer files or
+ISO chapter, but if there's a choice of not having to deal with answer files or
 installers I would, but you may want/have to.
 
 ## Amazon Builders
@@ -372,6 +372,7 @@ Time to try this all out again:
 
 ```cli
 $ packer build basic-auth.withcreds.json
+...
 ```
 
 <img src="https://gist.github.com/JamesWoolfenden/54a1dab9fe6c809c20392a086a4eeb11/raw/c5ec3e866ff610c7db6ec05e54db7de18f0348e8/termtosvg__w83xo1p.svg?sanitize=true">
