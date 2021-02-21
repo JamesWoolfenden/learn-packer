@@ -136,6 +136,9 @@ resource aws_instance packer {
   key_name                    = aws_key_pair.packer.key_name
   user_data                   = "${file("${path.module}/files/userdata.sh")}"
   subnet_id                   = var.subnet_id
+  root_block_device {
+    encrypted             = true
+  }
 
   tags = var.common_tags
 }

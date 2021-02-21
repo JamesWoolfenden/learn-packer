@@ -1,7 +1,7 @@
 common_tags = {
 "createdby" = "Terraform" }
 
-accounts = ["680235478471","216849691610"]
+accounts = ["680235478471", "216849691610"]
 key = {
   description              = "AMI-Shared"
   deletion_window_in_days  = 30
@@ -10,4 +10,4 @@ key = {
   is_enabled               = true
 }
 
-alias="alias/ami-shared"
+alias = "alias/ami-shared"
